@@ -1,0 +1,106 @@
+body{
+    overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+.home{
+    margin: 0;
+    #primary{
+        margin-left: 0;
+        width: 100vw;
+    }
+}
+
+body.home::after{
+    width: 100%;
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background-color: rgb(22, 36, 65);
+    @include media-desktop{
+        clip-path: polygon(75% 0, 100% 0, 100% 100%, 38% 100%);
+    }
+}
+
+.site-branding {
+    margin-bottom: 5vh;
+    p{
+      margin: 0px;  
+    }
+}
+
+.site-title {
+    font-size: clamp(.9rem, #{"-.8rem + 8.333vw"}, 3rem);
+    font-family: $font_title;
+        a{
+            text-decoration: none;    
+        }
+        
+}
+.site-title a:hover{
+    color: #710dbe;
+}
+
+.site-description { 
+    font-family: $font_title;
+    font-size: clamp(.9rem, #{"-.8rem + 8.333vw"}, 1.5rem);
+    font-weight: normal;
+    color: #b86ff0;
+    padding: 0;
+    margin-top: 0;
+}
+
+.entry-content{
+    width: 100vw;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: clamp(.9rem, #{"-.8rem + 8.333vw"}, 1.5rem);
+    color: rgb(44, 136, 135);
+    p{
+        margin: 5% 0 10px 0;
+        font-weight: bold;
+        width: 100%;
+    }
+    ul{
+        margin: 10px 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    .wp-block-image{
+        align-self: center;
+        margin: 0 0 0 0px;
+    }
+    img{
+        display: block;
+        border-radius: 10px;
+    }
+
+    @include media-desktop{
+        margin-left: 20px;
+        flex-direction: row;
+        text-align: start;
+        color: rgb(23, 48, 68);
+        .blocks-gallery-item figure{
+            margin: 0 0 0 5%;
+            width: 400px;
+            height: 400px;
+        }
+        p{
+            margin-top: 15px;
+            width: 300px;
+            margin-left: 2%;
+        }
+        ul{
+            margin-right: 5vh;
+            width: 150px;
+        }
+    }
+}
