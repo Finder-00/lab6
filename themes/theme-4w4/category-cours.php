@@ -27,13 +27,13 @@ get_header();
 			while ( have_posts() ) :
 				the_post();
 				$titre = get_the_title();
-				$session = substr($titre, 4, 1);
-				if($precedent != $session){
-					echo '<pSession : >' . $session .  '</p>';
+				$session = substr($titre, 4,1);
+				if($session != $precedent){
+					echo '<p>Session : ' . $session .  '</p>';
 				}
-
-				echo '<p>' . $session . '' . $titre . '</p>';
 				$precedent = $session;
+				echo '<p>' . $session . '' . $titre . '</p>';
+				
 			endwhile;
 		endif;
 		?>
