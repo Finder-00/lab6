@@ -1,6 +1,6 @@
 .main-navigation {
 	display: block;
-	width: 100%;
+	width: 100vw;
 	margin-bottom: 5vh;
 
 	ul {
@@ -123,11 +123,11 @@ transform: scale(0.9);
 	background-color: rgb(109, 58, 160);
 	@include media-desktop{
 		display: flex;
-		height: 2rem;
+		position: static;
 		justify-content: space-around;
 		align-items: center;
-		position: static;
 		width: 100vw;
+		height: 2rem;
 
 		ul{
 		position: absolute;
