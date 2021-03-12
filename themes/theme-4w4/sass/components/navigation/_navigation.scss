@@ -3,55 +3,71 @@
 	width: 100vw;
 	margin-bottom: 5vh;
 
-	ul {
+	ul {/* nav - menu (ul principal) */
+		background-color: rgb(109, 58, 160);
 		display: none;
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
 		width: 100%;
 
-		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			float: left;
+		ul { /*Sub-menu*/
+			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.34);
 			position: absolute;
+			transition: left .5s;
+			padding: 2px;
 			top: 100%;
 			left: -999em;
 			z-index: 99999;
-
-			ul {
-				left: -999em;
-				top: 0;
+			a{/* sous-onglets du Sub-menu*/
+				width: 100%;
 			}
+		} /*fin sub-menu*/
 
-			li {
-				&:hover > ul,
-				&.focus > ul {
-					display: block;
-					left: auto;
-				}
+		li{ /*les onglets principale*/
+			padding: 10px 5px;
+			li{ /* les sous onglet des onglets principale */
+				padding: inherit;
+				padding: 5px 2px;
+				background-color: rgb(87, 61, 132);;
 			}
-
-			:hover > a,
-			.focus > a {
-			}
-
-			a:hover,
-			a.focus {
+			li>a{
+				padding: inherit;
+				border-bottom: 1px solid white;
 			}
 		}
-
 		li:hover > ul,
 		li.focus > ul {
-			left: auto;
+			left: 0;
+			display: block;
 		}
-	}
+		//fleche qui pointe
+		li > a[href="#"]::after{
+			content:"\203A";
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			bottom: 0;
+			left: 95%;
+			right: 0;
+		}
+		//fleche qui s'abaisse
+		li.focus > a[href="#"]::after,
+		li > a[href="#"]:hover::after{
+			content:"ˇ";
+			transition: all .3s ease-in;
+		}
+
+	} /* fin ul principale*/
 
 	li {
 		position: relative;
-
+		flex: 1;
 		&:hover > a,
 		&.focus > a {
 		}
+
 	}
 
 	a {
@@ -65,7 +81,15 @@
 	.current-menu-ancestor > a {
 	}
 }
+/* ------------------------------
+	fin de .main-navigation
+ --------------------------------*/
 
+
+
+/*---------------
+bouton burger
+----------------*/
 #burger{
 	padding: 0;
 	border : 0;
@@ -97,30 +121,16 @@ transform: scale(0.9);
 #burger,
 .main-navigation.toggled ul {
 	display: none;
-
-	li{
-		a{
-			//fleche qui pointe
-			&[href="#"]::after{
-				position:absolute;
-				content: "-";
-				width: 100%;
-				height: 100%;
-				top: 25%;
-				bottom: 0;
-				left: 95%;
-				right: 0;
-			}
-		}
-	}
-	//fleche qui s'abaisse
-	li.focus a[href="#"]::after{
-		content:"a";
-	}
 }
+
+
+
+
+/*--------------
+Section desktop
+---------------*/
 .main-navigation.toggled ul,
 .main-navigation ul{
-	background-color: rgb(109, 58, 160);
 	@include media-desktop{
 		display: flex;
 		position: static;
@@ -128,22 +138,24 @@ transform: scale(0.9);
 		align-items: center;
 		width: 100vw;
 		height: 2rem;
-
+		a[href="#"]::after{
+			display: none;
+		}
+		
 		ul{
 		position: absolute;
-		gap: 10px;
 		width: 250px;
 		height: auto;
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
 		align-items: flex-start;
-		&:last-child{padding-bottom: 10px;}
+		&:last-child{
+			padding-bottom: 10px;
+		}
 			li{
-				width: inherit;
 				width: 100%;
-				padding-top: 1px;
-				padding-bottom: 1px;
+				display: block;
 			}
 			li:hover{
 				background-color: rgba(43, 22, 65, 0.81);
@@ -154,10 +166,26 @@ transform: scale(0.9);
 		li{
 			width: 20%;
 			text-align: center;
-			&:hover{background-color: rgba(53, 28, 82, 0.426);}
+			padding: inherit;
+
+			li{
+				padding: 7px 2px;
+			}
 		}
 	}
 }
+
+/*---------------------
+-- fin desktop
+-----------------------*/
+
+
+
+
+
+
+
+
 
 .comment-navigation,
 .posts-navigation,
