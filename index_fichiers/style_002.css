@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
 Theme Name: theme-4w4
 Theme URI: http://underscores.me/
@@ -673,50 +674,81 @@ textarea {
 --------------------------------------------- */
 .main-navigation {
   display: block;
-  width: 100%;
+  width: 100vw;
   margin-bottom: 5vh;
+  /* fin ul principale*/
 }
 
 .main-navigation ul {
+  /* nav - menu (ul principal) */
+  background-color: #6d3aa0;
   display: none;
   list-style: none;
   margin: 0;
   padding-left: 0;
   width: 100%;
+  /*fin sub-menu*/
 }
 
 .main-navigation ul ul {
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-  float: left;
+  /*Sub-menu*/
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.34);
   position: absolute;
+  transition: left .5s;
+  padding: 2px;
   top: 100%;
   left: -999em;
   z-index: 99999;
 }
 
-.main-navigation ul ul ul {
-  left: -999em;
-  top: 0;
-}
-
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
-  display: block;
-  left: auto;
-}
-
 .main-navigation ul ul a {
-  width: 200px;
-  margin-left: 3rem;
+  /* sous-onglets du Sub-menu*/
+  width: 100%;
+}
+
+.main-navigation ul li {
+  /*les onglets principale*/
+  padding: 10px 5px;
+}
+
+.main-navigation ul li li {
+  /* les sous onglet des onglets principale */
+  padding: inherit;
+  padding: 5px 2px;
+  background-color: #573d84;
+}
+
+.main-navigation ul li li > a {
+  padding: inherit;
+  border-bottom: 1px solid white;
 }
 
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
-  left: auto;
+  left: 0;
+  display: block;
+}
+
+.main-navigation ul li > a[href="#"]::after {
+  content: "\203A";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 95%;
+  right: 0;
+}
+
+.main-navigation ul li.focus > a[href="#"]::after,
+.main-navigation ul li > a[href="#"]:hover::after {
+  content: "ˇ";
+  transition: all .3s ease-in;
 }
 
 .main-navigation li {
   position: relative;
+  flex: 1;
 }
 
 .main-navigation a {
@@ -724,6 +756,12 @@ textarea {
   text-decoration: none;
 }
 
+/* ------------------------------
+	fin de .main-navigation
+ --------------------------------*/
+/*---------------
+bouton burger
+----------------*/
 #burger {
   padding: 0;
   border: 0;
@@ -747,49 +785,73 @@ textarea {
   display: block !important;
 }
 
+.sub-menu {
+  background-color: #339983;
+  left: -1000px;
+}
+
 /* Small menu. */
 #burger,
 .main-navigation.toggled ul {
-  display: block;
+  display: none;
 }
 
-#burger li a[href="#"]::after,
-.main-navigation.toggled ul li a[href="#"]::after {
-  position: absolute;
-  content: "-";
-  width: 100%;
-  height: 100%;
-  top: 25%;
-  bottom: 0;
-  left: 95%;
-  right: 0;
-}
-
-#burger li.focus a[href="#"]::after,
-.main-navigation.toggled ul li.focus a[href="#"]::after {
-  content: "a";
-}
-
-.main-navigation ul {
-  background-color: #6d3aa0;
-}
-
+/*--------------
+Section desktop
+---------------*/
 @media (min-width: 1000px) {
+  .main-navigation.toggled ul,
   .main-navigation ul {
     display: flex;
-    height: 2rem;
+    position: static;
     justify-content: space-around;
     align-items: center;
-    position: static;
     width: 100vw;
+    height: 2rem;
   }
+  .main-navigation.toggled ul a[href="#"]::after,
+  .main-navigation ul a[href="#"]::after {
+    display: none;
+  }
+  .main-navigation.toggled ul ul,
   .main-navigation ul ul {
+    position: absolute;
+    width: 250px;
+    height: auto;
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
     justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .main-navigation.toggled ul ul:last-child,
+  .main-navigation ul ul:last-child {
+    padding-bottom: 10px;
+  }
+  .main-navigation.toggled ul ul li,
+  .main-navigation ul ul li {
+    width: 100%;
+    display: block;
+  }
+  .main-navigation.toggled ul ul li:hover,
+  .main-navigation ul ul li:hover {
+    background-color: rgba(43, 22, 65, 0.81);
+    border-radius: 5px;
+  }
+  .main-navigation.toggled ul li,
+  .main-navigation ul li {
+    width: 20%;
+    text-align: center;
+    padding: inherit;
+  }
+  .main-navigation.toggled ul li li,
+  .main-navigation ul li li {
+    padding: 7px 2px;
   }
 }
 
+/*---------------------
+-- fin desktop
+-----------------------*/
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
 .post-navigation {
@@ -1136,7 +1198,7 @@ body.home::after {
     margin-left: 20px;
     flex-direction: row;
     text-align: start;
-    color: #173044;
+    color: #18364f;
   }
   .entry-content .blocks-gallery-item figure {
     margin: 0 0 0 5%;
@@ -1166,7 +1228,8 @@ body.home::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 3rem;
+  font-size: clamp(1rem, -.3rem + 8.333vw, 2.5rem);
+  text-align: center;
 }
 
 .carrousel div:nth-of-type(1) {
