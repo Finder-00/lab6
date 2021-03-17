@@ -102,44 +102,82 @@ body.home::after{
             margin-right: 5vh;
             width: 150px;
         }
-    }
-}
+    }// fin media-desktop
+} // fin .entry-content
 
 .article-menu{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    background-color: rgb(208, 255, 220);
+    background-color: rgb(26, 32, 52);
+
+    h1{ // grand titre section
+        font-size: clamp(1.4rem, #{"-.8rem + 6.333vw"}, 2rem);
+        color:white;
+        text-align: center;
+        margin-bottom:0;
+        margin-top: 2rem;
+    }
+    span{ // ligne de separation des section
+        margin: 0 auto;
+        width: 90%;
+        border-bottom: 3px solid lightcoral;
+    }
 
     section{
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-around;
-        margin: 2rem 0;
+        margin: 1rem 0;
 
-        article{
+        article{ //chaque bloc
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
             text-align: center;
-            width: 30%;
-            height: 20vh;
-            background-color: rgb(24, 43, 88);
+            margin: 10px 0;
+            width: 40%;
+            height: 22vh;
+            background-color: rgb(28, 41, 70);
             border-radius: 10px;
-            p{
-                font-size: .7rem;
-                font-weight: bold;
+            p{ // infos haut & bas cellule
+                font-size:clamp(.6rem, 2vw , .8rem) ;
                 color: lightcoral;
             }
-            a{
-                font-size: 1rem;
+            a{ // lien cours
+                font-size: clamp(.6rem, #{"-.5rem + 6.333vw"}, 1rem);
                 font-weight: bold;
-                color: lightcyan;
+                color: rgb(201, 244, 244);
+                text-decoration: none;
+                &:hover{
+                    color: rgb(38, 79, 175);
+                }
             }
         }// fin article
     }//fin section
-        
+    @include media-desktop{
+        section{
+            margin-bottom: 10vh;
+        }
+        section article{
+            height: 30vh;
+
+            p{ // infos haut & bas cellule
+                font-size:clamp(.9rem, 2vw , 1.2rem);
+                font-weight:lighter;
+            }
+            a{ // lien cours
+                font-size: clamp(.9rem, #{"-.5rem + 6.333vw"}, 1.5rem);
+                font-weight: bold;
+                color: rgb(201, 244, 244);
+                text-decoration: none;
+                &:hover{
+                    color: rgb(38, 79, 175);
+                }
+            }
+        }
+    }
 }// fin article menu

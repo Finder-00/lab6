@@ -14,9 +14,10 @@ get_header();
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
+				<!-- Masquer l'affichague du mot 'Archive' -->
 				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
+				//the_archive_title( '<h1 class="page-title">', '</h1>' );
+				//the_archive_description( '<div class="archive-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
 			<section class="article-menu">
@@ -37,7 +38,9 @@ get_header();
 					if($precedent != $typeCours): ?>
 						<?php if($precedent != "0"): ?>
 							</section> <!--ici on ferme la section ouverte precedement -->
+							<span></span> <!-- ligne separant les sections-->
 						<?php endif; ?>
+						<h1><?php echo $titre ?></h1>
 						<section>
 					<?php endif; ?>
 					

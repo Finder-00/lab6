@@ -1220,7 +1220,21 @@ body.home::after {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  background-color: #d0ffdc;
+  background-color: #1a2034;
+}
+
+.article-menu h1 {
+  font-size: clamp(1.4rem, -.8rem + 6.333vw, 2rem);
+  color: white;
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: 2rem;
+}
+
+.article-menu span {
+  margin: 0 auto;
+  width: 90%;
+  border-bottom: 3px solid lightcoral;
 }
 
 .article-menu section {
@@ -1228,7 +1242,7 @@ body.home::after {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: 2rem 0;
+  margin: 1rem 0;
 }
 
 .article-menu section article {
@@ -1238,22 +1252,49 @@ body.home::after {
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  width: 30%;
-  height: 20vh;
-  background-color: #182b58;
+  margin: 10px 0;
+  width: 40%;
+  height: 22vh;
+  background-color: #1c2946;
   border-radius: 10px;
 }
 
 .article-menu section article p {
-  font-size: .7rem;
-  font-weight: bold;
+  font-size: clamp(0.6rem, 2vw, 0.8rem);
   color: lightcoral;
 }
 
 .article-menu section article a {
-  font-size: 1rem;
+  font-size: clamp(0.6rem, -.5rem + 6.333vw, 1rem);
   font-weight: bold;
-  color: lightcyan;
+  color: #c9f4f4;
+  text-decoration: none;
+}
+
+.article-menu section article a:hover {
+  color: #264faf;
+}
+
+@media (min-width: 1000px) {
+  .article-menu section {
+    margin-bottom: 10vh;
+  }
+  .article-menu section article {
+    height: 30vh;
+  }
+  .article-menu section article p {
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    font-weight: lighter;
+  }
+  .article-menu section article a {
+    font-size: clamp(0.9rem, -.5rem + 6.333vw, 1.5rem);
+    font-weight: bold;
+    color: #c9f4f4;
+    text-decoration: none;
+  }
+  .article-menu section article a:hover {
+    color: #264faf;
+  }
 }
 
 .carrousel {
