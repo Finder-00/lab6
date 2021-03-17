@@ -27,12 +27,12 @@ get_header();
 				while ( have_posts() ) :
 					the_post();
 					//593-2j2 Aniamtion et interactivite jeux (75h)
-					$titre_grand = get_the_title();
-					$session = substr($titre_grand, 4,1);
-								// 1er nb = debut selection 2e nb = fin de la selection
-					$nbHeure = substr($titre_grand, -4, 3);
-					$titre = substr($titre_grand, 8, -6);
-					$sigle = substr($titre_grand, 0, 7);
+					$titre_complet = get_the_title();
+						// 1er nb = debut selection 2e nb = fin de la selection
+					$session = substr($titre_complet, 4,1);
+					$nbHeure = substr($titre_complet, -4, 3);
+					$titre = substr($titre_complet, 8, -6);
+					$sigle = substr($titre_complet, 0, 7);
 					$typeCours = get_field('type_de_cours');
 
 					if($precedent != $typeCours): ?>

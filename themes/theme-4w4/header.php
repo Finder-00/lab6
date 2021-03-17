@@ -65,9 +65,12 @@
 
 		<!-- debut du carrousel -->
 		<?php 
+		$titre_complet = get_the_title();
+		$titre_cour = substr($titre_complet,7, -5);
+		$session = substr($titre_complet, 4,1);
 		if( is_front_page()) : ?>
 		<section class="carrousel">
-			<div>Se définir un objectif</div>
+			<div><a href="<?php get_permalink(); ?>"><?php echo $titre_cour?> - Session <?php echo $session?></a></div>
 			<div>Être concentré pour accomplir son objectif</div>
 			<div>Prendre le temps de vivre</div>
 		</section>
