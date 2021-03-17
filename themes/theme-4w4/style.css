@@ -1216,6 +1216,46 @@ body.home::after {
   }
 }
 
+.article-menu {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: #d0ffdc;
+}
+
+.article-menu section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 2rem 0;
+}
+
+.article-menu section article {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  width: 30%;
+  height: 20vh;
+  background-color: #182b58;
+  border-radius: 10px;
+}
+
+.article-menu section article p {
+  font-size: .7rem;
+  font-weight: bold;
+  color: lightcoral;
+}
+
+.article-menu section article a {
+  font-size: 1rem;
+  font-weight: bold;
+  color: lightcyan;
+}
+
 .carrousel {
   display: flex;
   width: 300vw;

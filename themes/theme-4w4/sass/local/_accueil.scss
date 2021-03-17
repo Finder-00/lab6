@@ -104,3 +104,42 @@ body.home::after{
         }
     }
 }
+
+.article-menu{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: rgb(208, 255, 220);
+
+    section{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: 2rem 0;
+
+        article{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            width: 30%;
+            height: 20vh;
+            background-color: rgb(24, 43, 88);
+            border-radius: 10px;
+            p{
+                font-size: .7rem;
+                font-weight: bold;
+                color: lightcoral;
+            }
+            a{
+                font-size: 1rem;
+                font-weight: bold;
+                color: lightcyan;
+            }
+        }// fin article
+    }//fin section
+        
+}// fin article menu
