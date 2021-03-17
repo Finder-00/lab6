@@ -5,7 +5,7 @@ $epaisseur: 5%;
 
 #burger{
     @include media-desktop{
-        display: none;
+        display: none; // masque pour desktop
     }
     display: block;
     position: relative;

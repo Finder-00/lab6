@@ -65,11 +65,11 @@
 
 		<!-- debut du carrousel -->
 		<?php 
-		$titre_complet = get_the_title();
-		$titre_cour = substr($titre_complet,7, -5);
-		$session = substr($titre_complet, 4,1);
+		$titre_complet = get_the_title(); // prendre le titre complets d'un cours 
+		$titre_cour = substr($titre_complet,7, -5); // le titre du cours
+		$session = substr($titre_complet, 4,1); // le numero session
 		if( is_front_page()) : ?>
-		<section class="carrousel">
+		<section class="carrousel"> <!--slider-->
 			<div><a href="<?php get_permalink(); ?>"><?php echo $titre_cour?> - Session <?php echo $session?></a></div>
 			<div>Être concentré pour accomplir son objectif</div>
 			<div>Prendre le temps de vivre</div>

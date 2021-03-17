@@ -29,11 +29,11 @@ get_header();
 					//593-2j2 Aniamtion et interactivite jeux (75h)
 					$titre_complet = get_the_title();
 						// 1er nb = debut selection 2e nb = fin de la selection
-					$session = substr($titre_complet, 4,1);
-					$nbHeure = substr($titre_complet, -4, 3);
-					$titre = substr($titre_complet, 8, -6);
-					$sigle = substr($titre_complet, 0, 7);
-					$typeCours = get_field('type_de_cours');
+					$session = substr($titre_complet, 4,1); // le numero session
+					$nbHeure = substr($titre_complet, -4, 3); // heure du cours
+					$titre = substr($titre_complet, 8, -6);  // le titre du cours
+					$sigle = substr($titre_complet, 0, 7); // le code du cours
+					$typeCours = get_field('type_de_cours'); // le type associer a la categorie de l'article
 
 					if($precedent != $typeCours): ?>
 						<?php if($precedent != "0"): ?>
@@ -45,7 +45,7 @@ get_header();
 					<?php endif; ?>
 					
 					<article>
-						<p><?php echo $sigle . " - " . $nbHeure. " - " . $typeCours; ?></p>
+						<p><?php echo $sigle . " - " . $nbHeure. " - " . $typeCours; ?></p> <!-- 4w4 -  75h - web --> 
 						<a href="<?php echo get_permalink(); ?>"> <?php echo $titre; ?></a>
 						<p>Session : <?php echo $session; ?></p>
 					</article>
