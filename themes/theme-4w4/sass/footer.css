@@ -1,0 +1,18 @@
+footer {
+  background-color: #786e82;
+  color: white;
+  margin: 0;
+}
+
+footer div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+footer div a {
+  color: white;
+}
+/*# sourceMappingURL=footer.css.map */

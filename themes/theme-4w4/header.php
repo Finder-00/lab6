@@ -68,11 +68,13 @@
 		$titre_complet = get_the_title(); // prendre le titre complets d'un cours 
 		$titre_cour = substr($titre_complet,7, -5); // le titre du cours
 		$session = substr($titre_complet, 4,1); // le numero session
+
 		if( is_front_page()) : ?>
 		<section class="carrousel"> <!--slider-->
-			<div><a href="<?php get_permalink(); ?>"><?php echo $titre_cour?> - Session <?php echo $session?></a></div>
-			<div>Être concentré pour accomplir son objectif</div>
-			<div>Prendre le temps de vivre</div>
+			<div><a href="<?php get_permalink(); ?>"><?php echo get_the_title(); ?> - Session <?php echo $session?></a></div> <!-- premier lien genere par Get_the_title-->
+			<div>Être concentré pour accomplir son objectif</div> <!-- lien statique -->
+			<div>Prendre le temps de vivre</div> <!-- lien statique -->
+
 		</section>
 		<div class="bouton">
 			<div id="un"></div>

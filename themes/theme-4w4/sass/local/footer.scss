@@ -1,0 +1,16 @@
+footer{ // class du footer
+    background-color: rgb(120, 110, 130) ;
+    color: white;
+    margin: 0;
+    div{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        a{
+            color: white;
+            // text-decoration: none;
+        }
+    }
+}
