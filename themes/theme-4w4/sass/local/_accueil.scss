@@ -56,13 +56,13 @@ body.home::after{
     margin-top: 0;
 }
 
-.entry-title{
+.entry-title{ // titre des articles
     color: rgb(24, 54, 79);
     background-color: rgb(255, 255, 255);
     border-bottom: 3px solid;
 }
 
-.entry-content{ // texte de la page scrum * remplacer par les articles des cours
+.entry-content{ // les articles des cours
     width: 90vw;
     margin: 0 auto;
     display: flex;

@@ -41,6 +41,7 @@
 			left: 0;
 			display: block;
 		}
+		//menu deroulant mobile
 		//fleche qui pointe
 		li > a[href="#"]::after{
 			content:"\203A";

@@ -10,17 +10,27 @@
         justify-content: center;
         font-size: clamp(1rem, #{"-.3rem + 8.333vw"}, 2.5rem);;
         text-align: center;
+        // image 1 slider
         &:nth-of-type(1){
             width: 100vw;
             background-color: rgb(174, 92, 255);
         }
+        // image 2 slider
         &:nth-of-type(2){
             width: 100vw;
             background-color: rgb(255, 92, 255);
         }
+        // image 3 slider
         &:nth-of-type(3){
             width: 100vw;
             background-color: rgb(255, 92, 133);
+        }
+        a{
+            text-decoration: none;
+            color: rgb(39, 44, 67);
+            &:hover{
+                color: rgb(50, 205, 190);
+            }
         }
     } /*fin div*/
 }

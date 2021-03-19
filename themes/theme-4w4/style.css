@@ -1325,6 +1325,15 @@ body.home::after {
   background-color: #ff5c85;
 }
 
+.carrousel div a {
+  text-decoration: none;
+  color: #272c43;
+}
+
+.carrousel div a:hover {
+  color: #32cdbe;
+}
+
 .bouton {
   display: flex;
   justify-content: center;

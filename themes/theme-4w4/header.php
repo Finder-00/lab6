@@ -72,8 +72,8 @@
 		if( is_front_page()) : ?>
 		<section class="carrousel"> <!--slider-->
 			<div><a href="<?php get_permalink(); ?>"><?php echo get_the_title(); ?> - Session <?php echo $session?></a></div> <!-- premier lien genere par Get_the_title-->
-			<div>Être concentré pour accomplir son objectif</div> <!-- lien statique -->
-			<div>Prendre le temps de vivre</div> <!-- lien statique -->
+			<div><a href="#"> Jeux 3D - Session 3</a></div> <!-- lien statique -->
+			<div><a href="#">Effet spéciaux - Session 2</a></div> <!-- lien statique -->
 
 		</section>
 		<div class="bouton">
