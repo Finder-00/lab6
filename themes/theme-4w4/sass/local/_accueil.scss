@@ -2,6 +2,7 @@ body{
     overflow-x: hidden;
     width: 100vw;
     height: 100vh;
+    box-sizing: border-box;
 }
 
 .home{
@@ -55,14 +56,22 @@ body.home::after{
     margin-top: 0;
 }
 
+.entry-title{
+    color: rgb(24, 54, 79);
+    background-color: rgb(255, 255, 255);
+    border-bottom: 3px solid;
+}
+
 .entry-content{ // texte de la page scrum * remplacer par les articles des cours
-    width: 100vw;
-    margin-top: 10px;
+    width: 90vw;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     text-align: center;
     font-size: clamp(.9rem, #{"-.8rem + 8.333vw"}, 1.5rem);
-    color: rgb(44, 136, 135);
+    color: rgb(24, 54, 79);
+    background: rgb(244, 244, 244);
+    border-radius: 10px;
     p{
         margin: 5% 0 10px 0;
         font-weight: bold;
@@ -84,19 +93,15 @@ body.home::after{
     }
 
     @include media-desktop{
-        margin-left: 20px;
         flex-direction: row;
         text-align: start;
-        color: rgb(24, 54, 79);
         .blocks-gallery-item figure{
             margin: 0 0 0 5%;
             width: 400px;
             height: 400px;
         }
         p{
-            margin-top: 15px;
-            width: 300px;
-            margin-left: 2%;
+            margin: 5%;
         }
         ul{
             margin-right: 5vh;

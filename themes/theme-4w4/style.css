@@ -1094,6 +1094,7 @@ body {
   overflow-x: hidden;
   width: 100vw;
   height: 100vh;
+  box-sizing: border-box;
 }
 
 .home {
@@ -1153,14 +1154,22 @@ body.home::after {
   margin-top: 0;
 }
 
+.entry-title {
+  color: #18364f;
+  background-color: white;
+  border-bottom: 3px solid;
+}
+
 .entry-content {
-  width: 100vw;
-  margin-top: 10px;
+  width: 90vw;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   text-align: center;
   font-size: clamp(0.9rem, -.8rem + 8.333vw, 1.5rem);
-  color: #2c8887;
+  color: #18364f;
+  background: #f4f4f4;
+  border-radius: 10px;
 }
 
 .entry-content p {
@@ -1187,10 +1196,8 @@ body.home::after {
 
 @media (min-width: 1000px) {
   .entry-content {
-    margin-left: 20px;
     flex-direction: row;
     text-align: start;
-    color: #18364f;
   }
   .entry-content .blocks-gallery-item figure {
     margin: 0 0 0 5%;
@@ -1198,9 +1205,7 @@ body.home::after {
     height: 400px;
   }
   .entry-content p {
-    margin-top: 15px;
-    width: 300px;
-    margin-left: 2%;
+    margin: 5%;
   }
   .entry-content ul {
     margin-right: 5vh;
