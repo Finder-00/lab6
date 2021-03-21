@@ -138,6 +138,7 @@ body.home::after{
         margin: 1rem 0;
 
         article{ //chaque bloc
+            position: relative;
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
@@ -149,6 +150,8 @@ body.home::after{
             height: 22vh;
             background-color: rgb(28, 41, 70);
             border-radius: 10px;
+            z-index: 1;
+            
             p{ // infos haut & bas cellule
                 font-size:clamp(.6rem, 2vw , .8rem) ;
                 color: lightcoral;
@@ -163,6 +166,42 @@ body.home::after{
                 }
             }
         }// fin article
+
+        svg{ //vagues SVG de chaques articles 
+            position:absolute;
+            width: 100%;
+            bottom: 0;
+            border-radius: 10px;
+            z-index: -1;
+            fill: darkgoldenrod;
+           }
+        .Web{ //classe des articles par categorie
+            background-color: rgb(31, 31, 31);
+        }
+        .Spécifique{
+            background-color: rgb(49, 16, 126);
+            // background-color: rgb(164, 38, 218);
+        }
+        .Jeu{
+
+        }
+        .Image{
+            p{
+                color: rgb(0, 37, 100);
+            }
+            background-color: rgb(225, 82, 66);
+            // background-color: rgb(255, 169, 112);
+        }
+        .Conception{
+            p{
+                color: darkmagenta;
+            }
+            a{
+                color: rgb(35, 0, 139);
+            }
+            background-color: rgb(252, 182, 182);
+            // background-color: rgb(255, 134, 78);
+        }
     }//fin section
 
     // Desktop
