@@ -38,7 +38,7 @@ if ( ! function_exists( 'theme_4w4_setup' ) ) :
 		 * hard-coded <title> tag in the document head, and expect WordPress to
 		 * provide it for us.
 		 */
-		add_theme_support( 'title-tag' );
+		add_theme_support( 'hhh   title-tag' );
 
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
@@ -158,10 +158,11 @@ function theme_4w4_scripts() {
 
 
 	wp_register_script( 'theme-4w4-carrousel', get_template_directory_uri() . '/js/carrousel.js', array(), _S_VERSION, true );
-	wp_enqueue_script( 'theme-4w4-carrousel', );
+	wp_register_script( 'theme-4w4-carrousel2', get_template_directory_uri() . '/js/carrousel2.js', array(), _S_VERSION, true );
 
 	if (is_front_page()) {
 		wp_enqueue_script('theme-4w4-carrousel');
+		wp_enqueue_script('theme-4w4-carrousel2');
 	}
 
 

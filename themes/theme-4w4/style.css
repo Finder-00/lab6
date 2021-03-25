@@ -1408,6 +1408,110 @@ body.home::after {
   }
 }
 
+.carrousel2 {
+  display: flex;
+  width: 300vw;
+  height: 50vh;
+  transition: transform 0.5s;
+  /*fin .slide_conteneur*/
+}
+
+.carrousel2 .slide_conteneur {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*fin slide*/
+}
+
+.carrousel2 .slide_conteneur .slide {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: clamp(1rem, -.3rem + 8.333vw, 2.5rem);
+  text-align: center;
+}
+
+.carrousel2 .slide_conteneur .slide img {
+  display: block;
+}
+
+.carrousel2 .slide_conteneur .slide .slide_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.carrousel2 .slide_conteneur .slide .slide_info p {
+  font-size: .8rem;
+}
+
+.carrousel2 .slide_conteneur .slide .slide_info a {
+  font-size: 1.5rem;
+}
+
+.carrousel2 .slide_conteneur .slide:nth-of-type(1) {
+  width: 100vw;
+  background: linear-gradient(228deg, #cd9bff 0%, #5bff9a 56%, #00daaa 100%);
+}
+
+.carrousel2 .slide_conteneur .slide:nth-of-type(2) {
+  width: 100vw;
+  background: #fc466b;
+  background: radial-gradient(circle, #fc466b 8%, #3f5efb 100%);
+}
+
+.carrousel2 .slide_conteneur .slide:nth-of-type(3) {
+  width: 100vw;
+  background: #6130fd;
+  background: linear-gradient(90deg, #6130fd 0%, #5dc0bc 61%, #45fcbb 100%);
+}
+
+.carrousel2 .slide_conteneur .slide a {
+  text-decoration: none;
+  color: #10161f;
+}
+
+.carrousel2 .slide_conteneur .slide a:hover {
+  color: #32cdbe;
+}
+
+.bouton {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  margin: 0 0 10px 0;
+}
+
+#un, #deux, #trois {
+  background-color: #fff;
+  border-radius: 100px;
+  width: 16px;
+  height: 16px;
+  margin: 4px;
+}
+
+#un:hover, #deux:hover, #trois:hover {
+  cursor: pointer;
+  background-color: #3914a5;
+  border: 1.35px solid white;
+}
+
+@media (min-width: 1000px) {
+  #un, #deux, #trois {
+    background-color: #4096dd;
+    border: 2px;
+  }
+  #un:hover, #deux:hover, #trois:hover {
+    background-color: #49387c;
+    border: 2px solid #302d76;
+  }
+}
+
 /*----------------- variable sass */
 #burger {
   display: block;

@@ -9,61 +9,108 @@
 
 get_header();
 ?>
+
+<!-------
+debut carrousel 2
+------->
+<section class="carrousel2"> <!--slider-->
+	<article class="slide_conteneur">
+		<div class="slide">
+			<img src="" alt="">
+			<div class="slide_info">
+				<p> 454-4w4 - 90h - Web</p>
+				<a href=""></a>
+				<p>Session 4</p>
+			</div>
+		</div>
+	</article>
+</section>
+
+<div class="bouton">
+	<input type="radio" name="un"></input>
+	<input type="radio" name="deux"></input>
+	<input type="radio" name="trois"></input>
+</div>
+<!-------
+fin carrousel 2
+------->
+
+
+<!-- /////////////// contenu FRONT-PAGE ///////////// -->
 	<main id="primary" class="site-main">
 
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<!-- Masquer l'affichague du mot 'Archive' -->
-				<?php
+
+				<?php // Masquer l'affichague du mot 'Archive'
 				//the_archive_title( '<h1 class="page-title">', '</h1>' );
 				//the_archive_description( '<div class="archive-description">', '</div>' );
 				?>
+
 			</header><!-- .page-header -->
 			<section class="article-menu">
+				
 				<?php
 				$precedent = "0";
-				/* Start the Loop */
-				while ( have_posts() ) :
-					the_post();
-					//593-2j2 Aniamtion et interactivite jeux (75h)
-					$titre_complet = get_the_title();
-						// 1er nb = debut selection 2e nb = fin de la selection
-					$session = substr($titre_complet, 4,1); // le numero session
-					$nbHeure = substr($titre_complet, -4, 3); // heure du cours
-					$titre = substr($titre_complet, 8, -6);  // le titre du cours
-					$sigle = substr($titre_complet, 0, 7); // le code du cours
-					$typeCours = get_field('type_de_cours'); // le type associer a la categorie de l'article
 
-					if($precedent != $typeCours): ?>
-						<?php if($precedent != "0"): ?>
+				/* debut WHILE */
+				while ( have_posts() ) : the_post();
+
+					convertir_tableau($tPropriete);
+					
+					if($precedent != $tPropriete['typeCours']): 
+				?>
+						<?php if($precedent != $tPropriete["0"]): ?>
 							</section> <!--ici on ferme la section ouverte precedement -->
 							<span></span> <!-- ligne separant les sections-->
 						<?php endif; ?>
-						<h1><?php echo $titre ?></h1>
-						<section>
-					<?php endif; ?>
-					
-					<article class="<?php echo $typeCours ?>">
-						<?php echo type_vague($typeCours) ?>
-						<p><?php echo $sigle . " - " . $nbHeure. " - " . $typeCours; ?></p> <!-- 4w4 -  75h - web --> 
-						<a href="<?php echo get_permalink(); ?>"> <?php echo $titre; ?></a>
-						<p>Session : <?php echo $session; ?></p>
-					</article>
-				<?php 
+
+						<h1><?php echo $tPropriete['$titre'] ?></h1>
+						
+						<?php if($tPropriete['typeCours'] == 'Web'): ?>
+							<section class="carrousel2">
+						<?php else :?>
+							<section>
+						<?php endif; ?>
+						<?php endif; ?>
+
+						<?php if($tPropriete['typeCours'] == 'Web'):
+						get_template_part( 'template-parts/content', 'carrousel' );
+						else :
+						get_template_part( 'template-parts/content', 'bloc' );
+						endif;
+
+					$precedent = $tPropriete['$typeCours'];
+
+				endwhile; ?> <!-- fin WHILE-->
 				
-				$precedent = $typeCours;
-				endwhile;?>
 			</section>
-		<?php endif; ?>
+
+
+		<?php endif; ?> <!-- fin if (Have post())-->
 
 	</main><!-- #main -->
 
 <?php
+
 get_sidebar();
 get_footer();
 
 
+function convertir_tableau(&$tPropriete){
+
+	$tPropriete['titre'] = get_the_title();
+								// substr : 1er nb = debut selection 2e nb = fin de la selection
+		$tPropriete['session'] = substr($tPropriete['titre'], 4,1); // le numero session
+		$tPropriete['nbHeure'] = substr($tPropriete['titre'], -4, 3); // heure du cours
+		$tPropriete['titrePartiel'] = substr($tPropriete['titre'], 8, -6); // le titre du cours
+		$tPropriete['sigle'] = substr($tPropriete['titre'], 0, 7); // le code du cours
+		 
+		$tPropriete['typeCours'] = get_field('type_de_cours'); // le type associer a la categorie de l'article
+}
+
+//vague dans les cours -> article
 function type_vague($typeCours){
 	switch($typeCours){
 

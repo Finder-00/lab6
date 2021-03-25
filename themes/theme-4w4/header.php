@@ -69,6 +69,9 @@
 		$titre_cour = substr($titre_complet,7, -5); // le titre du cours
 		$session = substr($titre_complet, 4,1); // le numero session
 
+		// -------- 
+		//- debut carrousel
+		// --------
 		if( is_front_page()) : ?>
 		<section class="carrousel"> <!--slider-->
 			<div><a href="<?php get_permalink(); ?>"><?php echo get_the_title(); ?> - Session <?php echo $session?></a></div> <!-- premier lien genere par Get_the_title-->
@@ -82,7 +85,9 @@
 			<div id="trois"></div>
 		</div>
 		<?php endif; ?>
-		<!-- fin carrousel -->
+		<!-------
+		 fin carrousel
+		 ------->
 
 
 	</header><!-- #masthead -->
