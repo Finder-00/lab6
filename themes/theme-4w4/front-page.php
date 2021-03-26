@@ -26,7 +26,7 @@ debut carrousel 2
 	</article>
 </section>
 
-<div class="bouton">
+<div class="ctrl-carrousel">
 	<input type="radio" name="un"></input>
 	<input type="radio" name="deux"></input>
 	<input type="radio" name="trois"></input>
@@ -64,19 +64,27 @@ fin carrousel 2
 						<?php if($precedent != $tPropriete["0"]): ?>
 							</section> <!--ici on ferme la section ouverte precedement -->
 							<span></span> <!-- ligne separant les sections-->
+								<?php if($precedent != "Web"): 
+									$ctrl_radio .= "</section>";
+									echo $ctrl_radio;
+								endif;?>
 						<?php endif; ?>
 
 						<h1><?php echo $tPropriete['$titre'] ?></h1>
 						
 						<?php if($tPropriete['typeCours'] == 'Web'): ?>
 							<section class="carrousel2">
-						<?php else :?>
+						<?php 
+							$ctrl_radio = '<section class="ctrl-carrousel">';
+							else :?>
 							<section>
 						<?php endif; ?>
-						<?php endif; ?>
+
+					<?php endif; ?>
 
 						<?php if($tPropriete['typeCours'] == 'Web'):
 						get_template_part( 'template-parts/content', 'carrousel' );
+						$ctrl_radio .= '<input type="radio" name="rad-carrousel">';
 						else :
 						get_template_part( 'template-parts/content', 'bloc' );
 						endif;

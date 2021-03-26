@@ -1487,7 +1487,7 @@ body.home::after {
   margin: 0 0 10px 0;
 }
 
-#un, #deux, #trois {
+.ctrl-carrousel input {
   background-color: #fff;
   border-radius: 100px;
   width: 16px;
@@ -1495,18 +1495,18 @@ body.home::after {
   margin: 4px;
 }
 
-#un:hover, #deux:hover, #trois:hover {
+.ctrl-carrousel input:hover {
   cursor: pointer;
   background-color: #3914a5;
   border: 1.35px solid white;
 }
 
 @media (min-width: 1000px) {
-  #un, #deux, #trois {
+  .ctrl-carrousel input {
     background-color: #4096dd;
     border: 2px;
   }
-  #un:hover, #deux:hover, #trois:hover {
+  .ctrl-carrousel input:hover {
     background-color: #49387c;
     border: 2px solid #302d76;
   }
