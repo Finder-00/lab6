@@ -1235,47 +1235,46 @@ body.home::after {
   border-bottom: 3px solid lightcoral;
 }
 
-.article-menu section {
+.article-menu section.bloc {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
   margin: 1rem 0;
+  width: 100vw;
 }
 
-.article-menu section article {
+.article-menu section.bloc article {
   position: relative;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  text-align: center;
   margin: 10px 0;
-  width: 40%;
+  width: 100%;
   height: 22vh;
   background-color: #1c2946;
   border-radius: 10px;
   z-index: 1;
 }
 
-.article-menu section article p {
+.article-menu section.bloc article p {
   font-size: clamp(0.6rem, 2vw, 0.8rem);
   color: lightcoral;
 }
 
-.article-menu section article a {
+.article-menu section.bloc article a {
   font-size: clamp(0.6rem, -.5rem + 5vw, 1rem);
   font-weight: bold;
   color: #c9f4f4;
   text-decoration: none;
 }
 
-.article-menu section article a:hover {
+.article-menu section.bloc article a:hover {
   color: #264faf;
 }
 
-.article-menu section svg {
+.article-menu section.bloc svg {
   position: absolute;
   width: 100%;
   bottom: 0;
@@ -1284,52 +1283,54 @@ body.home::after {
   fill: darkgoldenrod;
 }
 
-.article-menu section .Web {
+.article-menu section.bloc .Web {
   background-color: #1f1f1f;
 }
 
-.article-menu section .Spécifique {
+.article-menu section.bloc .Spécifique {
   background-color: #31107e;
 }
 
-.article-menu section .Image {
+.article-menu section.bloc .Image {
   background-color: #e15242;
 }
 
-.article-menu section .Image p {
+.article-menu section.bloc .Image p {
   color: #002564;
 }
 
-.article-menu section .Conception {
+.article-menu section.bloc .Conception {
   background-color: #fcb6b6;
 }
 
-.article-menu section .Conception p {
+.article-menu section.bloc .Conception p {
   color: darkmagenta;
 }
 
-.article-menu section .Conception a {
+.article-menu section.bloc .Conception a {
   color: #23008b;
 }
 
 @media (min-width: 1000px) {
-  .article-menu section {
+  .article-menu section.bloc {
     margin-bottom: 10vh;
+    justify-content: space-around;
   }
-  .article-menu section article {
+  .article-menu section.bloc article {
+    width: 40%;
     height: 30vh;
   }
-  .article-menu section article p {
+  .article-menu section.bloc article p {
     font-size: clamp(0.9rem, 2vw, 1.2rem);
     font-weight: lighter;
   }
-  .article-menu section article a {
+  .article-menu section.bloc article a {
     font-size: clamp(0.9rem, -.5rem + 6.333vw, 1.5rem);
     font-weight: bold;
     color: #c9f4f4;
     text-decoration: none;
   }
-  .article-menu section article a:hover {
+  .article-menu section.bloc article a:hover {
     color: #264faf;
   }
 }
@@ -1413,6 +1414,7 @@ body.home::after {
   width: 300vw;
   height: 50vh;
   transition: transform 0.5s;
+  flex-wrap: nowrap;
   /*fin .slide_conteneur*/
 }
 
@@ -1485,6 +1487,12 @@ body.home::after {
   justify-content: center;
   width: 100vw;
   margin: 0 0 10px 0;
+}
+
+.ctrl-carrousel {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
 }
 
 .ctrl-carrousel input {

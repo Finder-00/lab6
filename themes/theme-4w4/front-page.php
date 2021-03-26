@@ -13,8 +13,8 @@ get_header();
 <!-------
 debut carrousel 2
 ------->
-<section class="carrousel2"> <!--slider-->
-	<article class="slide_conteneur">
+<!-- <section class="carrousel2"> //slider
+<article class="slide_conteneur">
 		<div class="slide">
 			<img src="" alt="">
 			<div class="slide_info">
@@ -27,10 +27,10 @@ debut carrousel 2
 </section>
 
 <div class="ctrl-carrousel">
-	<input type="radio" name="un"></input>
-	<input type="radio" name="deux"></input>
-	<input type="radio" name="trois"></input>
-</div>
+	<input type="radio" name="rad-carrousel">
+	<input type="radio" name="rad-carrousel">
+	<input type="radio" name="rad-carrousel">
+</div> -->
 <!-------
 fin carrousel 2
 ------->
@@ -52,49 +52,43 @@ fin carrousel 2
 			<section class="article-menu">
 				
 				<?php
-				$precedent = "0";
+				$precedent = "XXXXX";
+				$ctrl_radio = "";
 
 				/* debut WHILE */
 				while ( have_posts() ) : the_post();
 
 					convertir_tableau($tPropriete);
-					
-					if($precedent != $tPropriete['typeCours']): 
+
+					if($precedent != $tPropriete['typeCours']):
 				?>
-						<?php if($precedent != $tPropriete["0"]): ?>
+						<?php if($precedent != "XXXXX"): ?>
 							</section> <!--ici on ferme la section ouverte precedement -->
 							<span></span> <!-- ligne separant les sections-->
-								<?php if($precedent != "Web"): 
-									$ctrl_radio .= "</section>";
-									echo $ctrl_radio;
-								endif;?>
+
+							<?php if ($precedent == "Web"):?>
+							<section class="ctrl-carrousel">
+								<?php echo $ctrl_radio ?>
+							</section>
+							<?php endif;?>
+						
 						<?php endif; ?>
 
 						<h1><?php echo $tPropriete['$titre'] ?></h1>
-						
-						<?php if($tPropriete['typeCours'] == 'Web'): ?>
-							<section class="carrousel2">
-						<?php 
-							$ctrl_radio = '<section class="ctrl-carrousel">';
-							else :?>
-							<section>
-						<?php endif; ?>
 
-					<?php endif; ?>
+						<section <?php echo ($tPropriete['typeCours'] == 'Web' ? 'class="carrousel2"' : 'class="bloc"'); ?>>
 
+					<?php endif; ?>					
 						<?php if($tPropriete['typeCours'] == 'Web'):
 						get_template_part( 'template-parts/content', 'carrousel' );
-						$ctrl_radio .= '<input type="radio" name="rad-carrousel">';
+						$ctrl_radio .= '<input type="radio" class="bouton-radio" name="rad-carrousel">';
 						else :
 						get_template_part( 'template-parts/content', 'bloc' );
 						endif;
 
-					$precedent = $tPropriete['$typeCours'];
-
+					$precedent = $tPropriete['typeCours'];
 				endwhile; ?> <!-- fin WHILE-->
-				
 			</section>
-
 
 		<?php endif; ?> <!-- fin if (Have post())-->
 
@@ -108,12 +102,12 @@ get_footer();
 
 function convertir_tableau(&$tPropriete){
 
-	$tPropriete['titre'] = get_the_title();
+	$titreGrand = get_the_title();
 								// substr : 1er nb = debut selection 2e nb = fin de la selection
-		$tPropriete['session'] = substr($tPropriete['titre'], 4,1); // le numero session
-		$tPropriete['nbHeure'] = substr($tPropriete['titre'], -4, 3); // heure du cours
-		$tPropriete['titrePartiel'] = substr($tPropriete['titre'], 8, -6); // le titre du cours
-		$tPropriete['sigle'] = substr($tPropriete['titre'], 0, 7); // le code du cours
+		$tPropriete['session'] = substr($titreGrand, 4,1); // le numero session
+		$tPropriete['nbHeure'] = substr($titreGrand, -4, 3); // heure du cours
+		$tPropriete['titre'] = substr($titreGrand, 8, -6); // le titre du cours
+		$tPropriete['sigle'] = substr($titreGrand, 0, 7); // le code du cours
 		 
 		$tPropriete['typeCours'] = get_field('type_de_cours'); // le type associer a la categorie de l'article
 }

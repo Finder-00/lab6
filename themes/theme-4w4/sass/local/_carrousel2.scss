@@ -3,6 +3,7 @@
     width: 300vw;
     height: 50vh;
     transition: transform 0.5s;
+    flex-wrap: nowrap;
 
     .slide_conteneur{
         width: 100vw;
@@ -74,6 +75,11 @@
 }
 
 // bouton navigation dans carrousel
+.ctrl-carrousel{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
 .ctrl-carrousel input{
     background-color: #fff;
     border-radius: 100px;
