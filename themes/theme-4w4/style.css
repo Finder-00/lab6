@@ -539,15 +539,15 @@ a:hover, a:active {
 }
 
 .main-navigation ul a {
-  color: #c4afff;
+  color: #4d7577;
 }
 
 .main-navigation ul a:visited {
-  color: #1a46d5;
+  color: #10319f;
 }
 
 .main-navigation ul a:hover, .main-navigation ul a:focus, .main-navigation ul a:active {
-  color: #80d1da;
+  color: #344c4f;
 }
 
 .main-navigation ul a:focus {
@@ -663,28 +663,27 @@ textarea {
 /* Navigation
 --------------------------------------------- */
 .main-navigation {
-  display: block;
+  display: inline-block;
   width: 100vw;
-  margin-bottom: 5vh;
+  margin-bottom: 1vh;
   /* fin ul principale*/
 }
 
 .main-navigation ul {
   /* nav - menu (ul principal) */
-  background-color: #6d3aa0;
+  background-color: #0A2E4A;
   display: none;
   list-style: none;
   margin: 0;
   padding-left: 0;
+  padding: 30px 0;
   width: 100%;
   /*fin sub-menu*/
 }
 
 .main-navigation ul ul {
   /*Sub-menu*/
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.34);
   position: absolute;
-  transition: left .5s;
   padding: 2px;
   top: 100%;
   left: -999em;
@@ -693,6 +692,7 @@ textarea {
 
 .main-navigation ul ul a {
   /* sous-onglets du Sub-menu*/
+  color: #6590b1;
   width: 100%;
 }
 
@@ -705,10 +705,11 @@ textarea {
   /* les sous onglet des onglets principale */
   padding: inherit;
   padding: 5px 2px;
-  background-color: #573d84;
+  background-color: #174b72;
 }
 
 .main-navigation ul li li > a {
+  color: white;
   padding: inherit;
   border-bottom: 1px solid white;
 }
@@ -753,6 +754,7 @@ textarea {
 bouton burger
 ----------------*/
 #burger {
+  margin: 5px;
   padding: 0;
   border: 0;
   transform: rotate(0);
@@ -801,6 +803,7 @@ Section desktop
     align-items: center;
     width: 100vw;
     height: 2rem;
+    background-color: #c8fdff;
   }
   .main-navigation.toggled ul a[href="#"]::after,
   .main-navigation ul a[href="#"]::after {
@@ -815,10 +818,7 @@ Section desktop
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-  }
-  .main-navigation.toggled ul ul:last-child,
-  .main-navigation ul ul:last-child {
-    padding-bottom: 10px;
+    border-radius: 0 0 5px 5px;
   }
   .main-navigation.toggled ul ul li,
   .main-navigation ul ul li {
@@ -827,14 +827,17 @@ Section desktop
   }
   .main-navigation.toggled ul ul li:hover,
   .main-navigation ul ul li:hover {
-    background-color: rgba(43, 22, 65, 0.81);
+    background-color: #81cacd;
     border-radius: 5px;
   }
   .main-navigation.toggled ul li,
   .main-navigation ul li {
     width: 20%;
     text-align: center;
-    padding: inherit;
+  }
+  .main-navigation.toggled ul li:hover,
+  .main-navigation ul li:hover {
+    border-bottom: 40px #000000 !important;
   }
   .main-navigation.toggled ul li li,
   .main-navigation ul li li {
@@ -1108,7 +1111,6 @@ body {
 }
 
 body.home::after {
-  width: 100%;
   content: '';
   position: absolute;
   top: 0;
@@ -1116,43 +1118,93 @@ body.home::after {
   left: 0;
   right: 0;
   z-index: -1;
-  background-color: #162441;
+  background-color: #c8fdff;
 }
 
 @media (min-width: 1000px) {
   body.home::after {
-    clip-path: polygon(75% 0, 100% 0, 100% 100%, 38% 100%);
+    background-image: url(http://localhost:8888/4w4-tim/wp-content/uploads/2021/04/tim.jpg);
+    background-repeat: no-repeat;
+    background-position: 0px -2%;
+    background-size: 44%;
+    clip-path: circle(26.4% at 13% 18%);
   }
 }
 
+.home::before {
+  content: "";
+  z-index: -2;
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: -1.5px;
+  width: 101%;
+  height: 101%;
+  background-color: #c8fdff;
+  clip-path: circle(26.4% at 13% 18%);
+}
+
 .site-branding {
-  margin-bottom: 5vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 10vh;
 }
 
 .site-branding p {
   margin: 0px;
 }
 
+@media (min-width: 1000px) {
+  .site-branding {
+    margin-left: 37vw;
+    height: 55vh;
+    text-align: left;
+  }
+}
+
 .site-title {
-  font-size: clamp(0.9rem, -.8rem + 8.333vw, 3rem);
+  font-size: clamp(0.7rem, -.8rem + 8.333vw, 1.8rem);
   font-family: "Montserrat", sans-serif;
+  margin: .2rem 0;
 }
 
 .site-title a {
+  color: #0D2940;
   text-decoration: none;
 }
 
+@media (min-width: 1000px) {
+  .site-title {
+    font-size: clamp(0.9rem, -.8rem + 8.333vw, 2.25rem);
+  }
+  .site-title a {
+    color: #cefcff;
+    text-decoration: none;
+  }
+}
+
 .site-title a:hover {
-  color: #710dbe;
+  color: #8dc5c9;
 }
 
 .site-description {
   font-family: "Montserrat", sans-serif;
-  font-size: clamp(0.9rem, -.8rem + 8.333vw, 1.5rem);
+  font-size: clamp(0.5rem, -.8rem + 8.333vw, 1.3rem);
   font-weight: normal;
-  color: #b86ff0;
+  color: #b4d7da;
   padding: 0;
   margin-top: 0;
+}
+
+.site-description:hover {
+  cursor: default;
+}
+
+@media (min-width: 1000px) {
+  .site-description {
+    font-size: clamp(0.9rem, -.8rem + 8.333vw, 1.5rem);
+  }
 }
 
 .entry-title {
@@ -1215,23 +1267,24 @@ body.home::after {
 }
 
 .article-menu {
+  width: 100vw;
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
-  background-color: #1a2034;
+  background-color: #091426;
 }
 
 .article-menu h1 {
-  font-size: clamp(1.4rem, -.8rem + 6.333vw, 2rem);
+  width: 100vw;
+  font-size: clamp(1rem, -.8rem + 6vw, 2rem);
   color: white;
   text-align: center;
-  margin-bottom: 0;
-  margin-top: 2rem;
+  margin: 5% 20% 1% 20%;
 }
 
 .article-menu span {
+  display: block;
+  width: 90vw;
   margin: 0 auto;
-  width: 90%;
   border-bottom: 3px solid lightcoral;
 }
 
@@ -1250,7 +1303,8 @@ body.home::after {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  margin: 10px 0;
+  text-align: center;
+  margin: 10px 4vw;
   width: 100%;
   height: 22vh;
   background-color: #1c2946;
@@ -1259,19 +1313,19 @@ body.home::after {
 }
 
 .article-menu section.bloc article p {
-  font-size: clamp(0.6rem, 2vw, 0.8rem);
+  font-size: clamp(0.6rem, 3vw, 0.9rem);
   color: lightcoral;
 }
 
 .article-menu section.bloc article a {
-  font-size: clamp(0.6rem, -.5rem + 5vw, 1rem);
+  font-size: clamp(0.75rem, -.5rem + 4vw, 1rem);
   font-weight: bold;
-  color: #c9f4f4;
+  color: white;
   text-decoration: none;
 }
 
 .article-menu section.bloc article a:hover {
-  color: #264faf;
+  color: #5ea5d5;
 }
 
 .article-menu section.bloc svg {
@@ -1312,6 +1366,12 @@ body.home::after {
 }
 
 @media (min-width: 1000px) {
+  .article-menu h1 {
+    color: #cadee9;
+    margin: inherit;
+    margin-top: 5%;
+    margin-bottom: 2%;
+  }
   .article-menu section.bloc {
     margin-bottom: 10vh;
     justify-content: space-around;
@@ -1319,6 +1379,8 @@ body.home::after {
   .article-menu section.bloc article {
     width: 40%;
     height: 30vh;
+    margin-left: 0;
+    margin-right: 0;
   }
   .article-menu section.bloc article p {
     font-size: clamp(0.9rem, 2vw, 1.2rem);
@@ -1482,42 +1544,37 @@ body.home::after {
   color: #32cdbe;
 }
 
-.bouton {
-  display: flex;
-  justify-content: center;
-  width: 100vw;
-  margin: 0 0 10px 0;
-}
-
 .ctrl-carrousel {
   width: 100vw;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-.ctrl-carrousel input {
-  background-color: #fff;
+.ctrl-carrousel input[type="radio"] {
   border-radius: 100px;
   width: 16px;
   height: 16px;
   margin: 4px;
+  opacity: 0;
 }
 
-.ctrl-carrousel input:hover {
+.ctrl-carrousel input[type="radio"]:hover {
   cursor: pointer;
-  background-color: #3914a5;
-  border: 1.35px solid white;
 }
 
-@media (min-width: 1000px) {
-  .ctrl-carrousel input {
-    background-color: #4096dd;
-    border: 2px;
-  }
-  .ctrl-carrousel input:hover {
-    background-color: #49387c;
-    border: 2px solid #302d76;
-  }
+.ctrl-carrousel div {
+  transition: all .2s;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50px;
+  margin: 4px;
+  background-color: #00daaa !important;
+}
+
+.ctrl-carrousel div:hover {
+  background-color: #387668 !important;
 }
 
 /*----------------- variable sass */
@@ -1649,7 +1706,7 @@ footer {
   margin: 0;
 }
 
-footer div {
+footer .site-info {
   padding: 1rem 0;
   display: flex;
   background-color: rgba(11, 63, 140, 0.433);
@@ -1659,8 +1716,12 @@ footer div {
   color: white;
 }
 
-footer div h3 {
+footer .site-info h3 {
   font-weight: bold;
+  text-decoration: none;
+}
+
+footer .site-info a {
   text-decoration: none;
 }
 /*# sourceMappingURL=style.css.map */

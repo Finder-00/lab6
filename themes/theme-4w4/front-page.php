@@ -57,31 +57,33 @@ fin carrousel 2
 
 				/* debut WHILE */
 				while ( have_posts() ) : the_post();
-
+				
 					convertir_tableau($tPropriete);
-
+						
 					if($precedent != $tPropriete['typeCours']):
 				?>
 						<?php if($precedent != "XXXXX"): ?>
 							</section> <!--ici on ferme la section ouverte precedement -->
+							<?php if($precedent != "Web"): ?> <!--pour ne pas afficher en dessous du carrousel-->
 							<span></span> <!-- ligne separant les sections-->
+							<?php endif;?>
 
 							<?php if ($precedent == "Web"):?>
 							<section class="ctrl-carrousel">
-								<?php echo $ctrl_radio ?>
+								<?php echo $ctrl_radio?>
 							</section>
 							<?php endif;?>
 						
 						<?php endif; ?>
 
-						<h1><?php echo $tPropriete['$titre'] ?></h1>
+						<h1><?php echo $tPropriete['titre'] ?></h1>
 
 						<section <?php echo ($tPropriete['typeCours'] == 'Web' ? 'class="carrousel2"' : 'class="bloc"'); ?>>
 
 					<?php endif; ?>					
 						<?php if($tPropriete['typeCours'] == 'Web'):
 						get_template_part( 'template-parts/content', 'carrousel' );
-						$ctrl_radio .= '<input type="radio" class="bouton-radio" name="rad-carrousel">';
+						$ctrl_radio .= '<div><input type="radio" class="bouton-radio" name="rad-carrousel"></div>';
 						else :
 						get_template_part( 'template-parts/content', 'bloc' );
 						endif;
@@ -99,18 +101,20 @@ fin carrousel 2
 get_sidebar();
 get_footer();
 
-
 function convertir_tableau(&$tPropriete){
-
+	
 	$titreGrand = get_the_title();
-								// substr : 1er nb = debut selection 2e nb = fin de la selection
-		$tPropriete['session'] = substr($titreGrand, 4,1); // le numero session
-		$tPropriete['nbHeure'] = substr($titreGrand, -4, 3); // heure du cours
-		$tPropriete['titre'] = substr($titreGrand, 8, -6); // le titre du cours
-		$tPropriete['sigle'] = substr($titreGrand, 0, 7); // le code du cours
-		 
-		$tPropriete['typeCours'] = get_field('type_de_cours'); // le type associer a la categorie de l'article
+	// print($titreGrand);
+	// print_r($tPropriete['session']);
+	// substr : 1er nb = debut selection 2e nb = fin de la selection
+	$tPropriete['session'] = substr($titreGrand, 4,1); // le numero session
+	$tPropriete['nbHeure'] = substr($titreGrand, -4, 3); // heure du cours
+	$tPropriete['titre'] = substr($titreGrand, 8, -6); // le titre du cours
+	$tPropriete['sigle'] = substr($titreGrand, 0, 7); // le code du cours
+
+	$tPropriete['typeCours'] = get_field('type_de_cours'); // le type associer a la categorie de l'article
 }
+
 
 //vague dans les cours -> article
 function type_vague($typeCours){

@@ -14,7 +14,6 @@ body{
 }
 
 body.home::after{
-    width: 100%;
     content: '';
     position: absolute;
     top: 0;
@@ -22,38 +21,77 @@ body.home::after{
     left: 0;
     right: 0;
     z-index: -1;
-    background-color: rgb(22, 36, 65);
+    background-color: #c8fdff;
     @include media-desktop{
-        clip-path: polygon(75% 0, 100% 0, 100% 100%, 38% 100%);
+        background-image: url(http://localhost:8888/4w4-tim/wp-content/uploads/2021/04/tim.jpg);
+        background-repeat: no-repeat;
+        background-position: 0px -2% ;
+        background-size: 44%;
+        clip-path: circle(26.4% at 13% 18%);
     }
 }
 
+.home::before{ //border de l'image
+content: "";
+z-index: -2;
+display: block;
+position: absolute;
+top: 0px;
+left: -1.5px;
+width: 101%;
+height: 101%;
+background-color: #c8fdff;
+clip-path: circle(26.4% at 13% 18%);
+}
+
 .site-branding {
-    margin-bottom: 5vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 10vh;
     p{
       margin: 0px;  
+    }
+    @include media-desktop{
+        margin-left: 37vw;
+        height: 55vh;
+        text-align: left;
     }
 }
 
 .site-title {
-    font-size: clamp(.9rem, #{"-.8rem + 8.333vw"}, 3rem);
+    font-size: clamp(.7rem, #{"-.8rem + 8.333vw"}, 1.8rem);
     font-family: $font_title;
+    margin: .2rem 0;
         a{
+            color: #0D2940;
             text-decoration: none;    
         }
-        
+    @include media-desktop{
+        font-size: clamp(.9rem, #{"-.8rem + 8.333vw"}, 2.25rem);
+        a{
+            color: rgb(206, 252, 255);
+            text-decoration: none;    
+        }
+    }
 }
 .site-title a:hover{
-    color: #710dbe;
+    color: rgb(141, 197, 201);
 }
 
 .site-description { 
     font-family: $font_title;
-    font-size: clamp(.9rem, #{"-.8rem + 8.333vw"}, 1.5rem);
+    font-size: clamp(.5rem, #{"-.8rem + 8.333vw"}, 1.3rem);
     font-weight: normal;
-    color: #b86ff0;
+    color: rgb(180, 215, 218);
     padding: 0;
     margin-top: 0;
+    &:hover{
+        cursor:default;
+    }
+    @include media-desktop{
+        font-size: clamp(.9rem, #{"-.8rem + 8.333vw"}, 1.5rem);
+    }
 }
 
 .entry-title{ // titre des articles
@@ -62,7 +100,7 @@ body.home::after{
     border-bottom: 3px solid;
 }
 
-.entry-content{ // les articles des cours
+.entry-content{ // les articles des cours 
     width: 90vw;
     margin: 0 auto;
     display: flex;
@@ -112,21 +150,24 @@ body.home::after{
 } // fin .entry-content
 
 .article-menu{ //grosse section contenant tout les articles
+    width: 100vw;
     display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
-    background-color: rgb(26, 32, 52);
+    background-color: rgb(9, 20, 38);
 
     h1{ // grand titre section
-        font-size: clamp(1.4rem, #{"-.8rem + 6.333vw"}, 2rem);
+        width: 100vw;
+        font-size: clamp(1rem, #{"-.8rem + 6vw"}, 2rem);
         color:white;
         text-align: center;
-        margin-bottom:0;
-        margin-top: 2rem;
+        margin: 5% 20% 1% 20%;
     }
     span{ // ligne de separation des section
+        
+        display: block;
+        // margin: 0 10% 0 10%;
+        width: 90vw;
         margin: 0 auto;
-        width: 90%;
         border-bottom: 3px solid lightcoral;
     }
 
@@ -144,7 +185,8 @@ body.home::after{
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
-            margin: 10px 0;
+            text-align: center;
+            margin: 10px 4vw;
             width: 100%;
             height: 22vh;
             background-color: rgb(28, 41, 70);
@@ -152,16 +194,17 @@ body.home::after{
             z-index: 1;
             
             p{ // infos haut & bas cellule
-                font-size:clamp(.6rem, 2vw , .8rem) ;
+                font-size:clamp(.6rem, 3vw , .9rem) ;
                 color: lightcoral;
             }
             a{ // lien cours
-                font-size: clamp(.6rem, #{"-.5rem + 5vw"}, 1rem);
+                font-size: clamp(.75rem, #{"-.5rem + 4vw"}, 1rem);
                 font-weight: bold;
-                color: rgb(201, 244, 244);
+                // color: rgb(201, 244, 244);
+                color: white;
                 text-decoration: none;
                 &:hover{
-                    color: rgb(38, 79, 175);
+                    color: rgb(94, 165, 213);
                 }
             }
         }// fin article
@@ -205,6 +248,12 @@ body.home::after{
 
     // Desktop
     @include media-desktop{
+        h1{
+            color: rgb(202, 222, 233);
+            margin:inherit;
+            margin-top: 5%;
+            margin-bottom: 2%;
+        }
         section.bloc{
             margin-bottom: 10vh;
             justify-content: space-around;
@@ -212,6 +261,8 @@ body.home::after{
         section.bloc article{
             width: 40%;
             height: 30vh;
+            margin-left: 0;
+            margin-right: 0;
 
 
             p{ // infos haut & bas cellule

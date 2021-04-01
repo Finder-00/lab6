@@ -15,9 +15,9 @@
 		<div class="slide">
 		<?php the_post_thumbnail( 'thumbnail') ?>
 			<div class="slide_info">
-				<p> <?php echo $tPropriete['$sigle'] . " - " . $tPropriete['$nbHeure'] . " - " . $tPropriete['$typeCours']; ?></p>
-				<a href="<?php echo get_permalink(); ?>"> <?php echo $tPropriete['$titre']; ?></a>
-				<p>Session : <?php echo $tPropriete['$session'];?></p>
+				<p> <?php echo $tPropriete['sigle'] . " - " . $tPropriete['nbHeure'] . " - " . $tPropriete['typeCours']; ?></p>
+				<a href="<?php echo get_permalink(); ?>"> <?php echo $tPropriete['titre']; ?></a>
+				<p>Session : <?php echo $tPropriete['session'];?></p>
 			</div>
 		</div>
 </article>

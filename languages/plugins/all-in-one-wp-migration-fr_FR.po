@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - All-in-One WP Migration - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-02-20 07:13:34+0000\n"
+"PO-Revision-Date: 2021-03-28 09:29:05+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -119,7 +119,7 @@ msgstr "%s n’est pas la dernière version. Vous devez mettre à jour l’exten
 msgid "Your backup is from a PHP 5 but the site that you are importing to is PHP 7. This could cause the import to fail. Technical details: https://help.servmask.com/knowledgebase/migrate-wordpress-from-php-5-to-php-7/"
 msgstr "La version de PHP de la sauvegarde est PHP5, mais le site sur lequel vous l’importez fonctionne avec PHP7. Cela peut causer l’échec de l’import. Détails techniques : https://help.servmask.com/knowledgebase/migrate-wordpress-from-php-5-to-php-7/ (en anglais)"
 
-#: lib/view/backups/index.php:51 lib/view/backups/backups-list.php:46
+#: lib/view/backups/backups-list.php:46 lib/view/backups/index.php:51
 msgid "Refreshing backup list..."
 msgstr "Rafraîchissement de la liste des sauvegardes&hellip;"
 
@@ -229,12 +229,12 @@ msgstr "Le type de fichier que vous essayez de téléverser n’est pas compatib
 msgid "WordPress Multisite is supported via our All-in-One WP Migration Multisite Extension. You can get a copy of it here"
 msgstr "WordPress multisite est pris en charge par notre extension All-in-One WP Migration Multisite. Vous pouvez l’obtenir ici"
 
-#: lib/view/main/backups-index-php-notice.php:35
-#: lib/view/main/storage-index-php-notice.php:35
-#: lib/view/main/backups-webconfig-notice.php:35
-#: lib/view/main/backups-index-html-notice.php:35
-#: lib/view/main/wordpress-htaccess-notice.php:35
 #: lib/view/main/storage-index-html-notice.php:35
+#: lib/view/main/storage-index-php-notice.php:35
+#: lib/view/main/backups-index-html-notice.php:35
+#: lib/view/main/backups-webconfig-notice.php:35
+#: lib/view/main/backups-index-php-notice.php:35
+#: lib/view/main/wordpress-htaccess-notice.php:35
 #: lib/view/main/backups-htaccess-notice.php:35
 msgid "All-in-One WP Migration is not able to create <strong>%s</strong> file. Try to change permissions of the parent folder or send us an email at <a href=\"mailto:support@servmask.com\">support@servmask.com</a> for assistance."
 msgstr "All-in-One WP Migration ne peut pas créer le fichier <strong>%s</strong>. Essayez de changer les droits du dossier parent ou envoyez-nous un e-mail à <a href=\"mailto:support@servmask.com\">support@servmask.com</a> pour obtenir de l’aide."
@@ -319,7 +319,7 @@ msgstr "Continuer"
 #: lib/controller/class-ai1wm-main-controller.php:875
 #: lib/controller/class-ai1wm-main-controller.php:1058
 msgid "Proceed"
-msgstr "Poursuivre"
+msgstr "Continuer"
 
 #: lib/controller/class-ai1wm-main-controller.php:874
 #: lib/controller/class-ai1wm-main-controller.php:1057
@@ -421,31 +421,31 @@ msgstr "Impossible de commencer l’export. Veuillez recharger la page et réess
 msgid "You are about to stop exporting your website, are you sure?"
 msgstr "Vous êtes sur le point d’arrêter l’export de votre site, confirmez-vous cette action ?"
 
-#: functions.php:1587
+#: functions.php:1597
 msgid "Unable to authenticate the secret key. <a href=\"https://help.servmask.com/knowledgebase/invalid-secret-key/\" target=\"_blank\">Technical details</a>"
 msgstr "Impossible d’authentifier la clé secrète. <a href=\"https://help.servmask.com/knowledgebase/invalid-secret-key/\" target=\"_blank\">Détails techniques (en anglais)</a>"
 
-#: functions.php:1487
+#: functions.php:1497
 msgid "Unable to get current pointer position of %s. <a href=\"https://help.servmask.com/knowledgebase/php-32bit/\" target=\"_blank\">Technical details</a>"
 msgstr "Impossible d’obtenir la position actuelle du pointeur de %s. <a href=\"https://help.servmask.com/knowledgebase/php-32bit/\" target=\"_blank\">Détails techniques (en anglais).</a>"
 
-#: functions.php:1470
+#: functions.php:1480
 msgid "Unable to seek to offset %d on %s. <a href=\"https://help.servmask.com/knowledgebase/php-32bit/\" target=\"_blank\">Technical details</a>"
 msgstr "Impossible de chercher à décaler %d sur %s. <a href=\"https://help.servmask.com/knowledgebase/php-32bit/\" target=\"_blank\">Détails techniques (en anglais)</a>"
 
-#: functions.php:1453
+#: functions.php:1463
 msgid "Unable to read file: %s. <a href=\"https://help.servmask.com/knowledgebase/invalid-file-permissions/\" target=\"_blank\">Technical details</a>"
 msgstr "Impossible de lire le fichier : %s. <a href=\"https://help.servmask.com/knowledgebase/invalid-file-permissions/\" target=\"_blank\">Détails techniques (en anglais)</a>"
 
-#: functions.php:1434
+#: functions.php:1444
 msgid "Out of disk space. Unable to write to: %s. <a href=\"https://help.servmask.com/knowledgebase/out-of-disk-space/\" target=\"_blank\">Technical details</a>"
 msgstr "Espace disque saturé. Impossible d’écrire sur :%s. <a href=\"https://help.servmask.com/knowledgebase/out-of-disk-space/\" target=\"_blank\">Détails techniques (en anglais)</a>"
 
-#: functions.php:1430
+#: functions.php:1440
 msgid "Unable to write to: %s. <a href=\"https://help.servmask.com/knowledgebase/invalid-file-permissions/\" target=\"_blank\">Technical details</a>"
 msgstr "Impossible d’écrire sur : %s. <a href=\"https://help.servmask.com/knowledgebase/invalid-file-permissions/\" target=\"_blank\">Détails techniques (en anglais)</a>"
 
-#: functions.php:1411
+#: functions.php:1421
 msgid "Unable to open %s with mode %s. <a href=\"https://help.servmask.com/knowledgebase/invalid-file-permissions/\" target=\"_blank\">Technical details</a>"
 msgstr "Impossible d’ouvrir %s avec le mode %s. <a href=\"https://help.servmask.com/knowledgebase/invalid-file-permissions/\" target=\"_blank\">Détails techniques (en anglais)</a>"
 
@@ -509,8 +509,8 @@ msgstr "Archivage de la base de données...<br />%d%% terminé"
 msgid "Restoring database...<br />%d%% complete"
 msgstr "Restauration de la base de données en cours...<br />%d%% terminé"
 
-#: lib/model/export/class-ai1wm-export-compatibility.php:35
 #: lib/model/import/class-ai1wm-import-compatibility.php:35
+#: lib/model/export/class-ai1wm-export-compatibility.php:35
 msgid "Checking extensions compatibility..."
 msgstr "Vérification de la compatibilité des extensions..."
 
@@ -535,7 +535,7 @@ msgstr "Hebdomadaire"
 msgid "Do <strong>not</strong> export must-use plugins (files)"
 msgstr "Ne <strong>pas</strong> exporter les extensions indispensables (fichiers)"
 
-#: lib/model/import/class-ai1wm-import-mu-plugins.php:60
+#: lib/model/import/class-ai1wm-import-mu-plugins.php:61
 msgid "Done activating mu-plugins."
 msgstr "L’activation des extensions indispensables est terminée."
 
@@ -749,7 +749,7 @@ msgstr "Chercher"
 msgid "Export To"
 msgstr "Exporter vers"
 
-#: lib/view/export/button-file.php:31 lib/view/import/button-file.php:32
+#: lib/view/import/button-file.php:32 lib/view/export/button-file.php:31
 msgid "File"
 msgstr "Fichier"
 
@@ -821,8 +821,8 @@ msgstr "J’ai besoin d’aide pour cette extension"
 msgid "I have ideas to improve this plugin"
 msgstr "J’ai des idées pour améliorer cette extension"
 
-#: lib/view/backups/index.php:83 lib/view/export/index.php:75
-#: lib/view/import/index.php:71
+#: lib/view/backups/index.php:83 lib/view/import/index.php:71
+#: lib/view/export/index.php:75
 msgid "Leave Feedback"
 msgstr "Laisser un commentaire"
 
@@ -858,9 +858,9 @@ msgstr "Date"
 msgid "Name"
 msgstr "Nom"
 
-#: lib/model/import/class-ai1wm-import-done.php:349
-#: lib/model/import/class-ai1wm-import-done.php:351
-#: lib/model/import/class-ai1wm-import-done.php:353
+#: lib/model/import/class-ai1wm-import-done.php:354
+#: lib/model/import/class-ai1wm-import-done.php:356
+#: lib/model/import/class-ai1wm-import-done.php:358
 msgid "Your site has been imported successfully!"
 msgstr "Votre site a bien été importé !"
 
@@ -920,9 +920,9 @@ msgstr "Obtenir l’extension multisite"
 msgid "Unable to import"
 msgstr "Impossible d’importer "
 
-#: lib/controller/class-ai1wm-main-controller.php:743
-#: lib/controller/class-ai1wm-main-controller.php:1040
 #: lib/controller/class-ai1wm-export-controller.php:85
 #: lib/controller/class-ai1wm-export-controller.php:86
+#: lib/controller/class-ai1wm-main-controller.php:743
+#: lib/controller/class-ai1wm-main-controller.php:1040
 msgid "Unable to export"
 msgstr "Impossible d’exporter"

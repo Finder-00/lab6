@@ -3,7 +3,7 @@ footer {
   margin: 0;
 }
 
-footer div {
+footer .site-info {
   padding: 1rem 0;
   display: flex;
   background-color: rgba(11, 63, 140, 0.433);
@@ -13,8 +13,12 @@ footer div {
   color: white;
 }
 
-footer div h3 {
+footer .site-info h3 {
   font-weight: bold;
+  text-decoration: none;
+}
+
+footer .site-info a {
   text-decoration: none;
 }
 /*# sourceMappingURL=footer.css.map */

@@ -26,6 +26,25 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'theme-4w4' ); ?></a>
 
 	<header id="masthead" class="site-header">
+	<!-- inversion, jai mis le nav en premier -->
+	<!-- <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><img src="https://s2.svgbox.net/hero-outline.svg?ic=view-list&color=000000" width="32" height="32"></button> -->
+	<nav id="site-navigation" class="main-navigation">
+			<section id="burger" aria-controls="primary-menu" aria-expanded="false">
+				<div></div>
+				<div></div>
+				<div></div>
+			</section>
+			<?php
+			wp_nav_menu(
+				array(
+					'theme_location' => 'menu-1',
+					'menu_id'        => 'primary-menu',
+				)
+			);
+			?>
+		</nav><!-- #site-navigation -->
+
+		<!-- grand titre du site -->
 		<div class="site-branding">
 			<?php
 			the_custom_logo();
@@ -45,23 +64,6 @@
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
-		<!-- <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><img src="https://s2.svgbox.net/hero-outline.svg?ic=view-list&color=000000" width="32" height="32"></button> -->
-		<nav id="site-navigation" class="main-navigation">
-			<section id="burger" aria-controls="primary-menu" aria-expanded="false">
-				<div></div>
-				<div></div>
-				<div></div>
-			</section>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
-
 
 		<!-- debut du carrousel -->
 		<?php 
@@ -69,14 +71,12 @@
 		$titre_cour = substr($titre_complet,7, -5); // le titre du cours
 		$session = substr($titre_complet, 4,1); // le numero session
 
-		// -------- 
 		//- debut carrousel
-		// --------
-		if( is_front_page()) : ?>
-		<section class="carrousel"> <!--slider-->
-			<div><a href="<?php get_permalink(); ?>"><?php echo get_the_title(); ?> - Session <?php echo $session?></a></div> <!-- premier lien genere par Get_the_title-->
-			<div><a href="#"> Jeux 3D - Session 3</a></div> <!-- lien statique -->
-			<div><a href="#">Effet spéciaux - Session 2</a></div> <!-- lien statique -->
+		if( get_the_title( ) == 0) : ?> <!-- condition bidon pour masquer le carrousel-->
+		<section class="carrousel">
+			<div><a href="<?php get_permalink(); ?>"><?php echo get_the_title(); ?> - Session <?php echo $session?></a></div>
+			<div><a href="#"> Jeux 3D - Session 3</a></div> 
+			<div><a href="#">Effet spéciaux - Session 2</a></div>
 
 		</section>
 		<div class="bouton">
@@ -85,9 +85,7 @@
 			<div id="trois"></div>
 		</div>
 		<?php endif; ?>
-		<!-------
-		 fin carrousel
-		 ------->
+		<!--fin carrousel-->
 
 
 	</header><!-- #masthead -->
