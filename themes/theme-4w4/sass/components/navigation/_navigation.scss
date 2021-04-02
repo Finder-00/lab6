@@ -1,10 +1,9 @@
 .main-navigation {
 	display: inline-block;
 	width: 100vw;
-	margin-bottom: 1vh;
 
 	ul {/* nav - menu (ul principal) */
-		background-color: #0A2E4A;
+		background-color:#c8fdff;
 		display: none;
 		list-style: none;
 		margin: 0;
@@ -19,21 +18,25 @@
 			left: -999em;
 			z-index: 99999;
 			a{/* sous-onglets du Sub-menu*/
-				color: #6590b1;
+				
 				width: 100%;
 			}
 		} /*fin sub-menu*/
 
 		li{ /*les onglets principale*/
+			font-size: 1.2rem;
 			padding: 10px 5px;
+			&:hover{
+				background-color: #bceaeb;
+			}
 
 			li{ /* les sous onglet des onglets principale */
 				padding: inherit;
 				padding: 5px 2px;
-				background-color: #174b72;
+				background-color: #a5e4dc;
 			}
 			li>a{
-				color: white;
+				color: $color__linkmenu;
 				padding: inherit;
 				border-bottom: 1px solid white;
 			}
@@ -74,7 +77,6 @@
 	}
 
 	a {
-		// color: #2c5355;
 		display: block;
 		text-decoration: none;
 	}
@@ -95,14 +97,11 @@
 bouton burger
 ----------------*/
 #burger{
-	margin: 5px;
+	margin: 10px;
 	padding: 0;
 	border : 0;
 	transform: rotate(0);
-	transition: transform .5s;
-	background: white;
-	width: 10px;
-	height: 10px;
+	transition: all .5s ease-out;
 }
 
 #burger:focus{
@@ -140,7 +139,7 @@ Section desktop
 .main-navigation.toggled ul,
 .main-navigation ul{
 	@include media-desktop{
-		display: flex;
+		display: flex !important; // solution du bug de menu en passant de mobile a desktop
 		position: static;
 		justify-content: space-around;
 		align-items: center;
@@ -160,14 +159,14 @@ Section desktop
 		justify-content: flex-start;
 		align-items: flex-start;
 		border-radius: 0 0 5px 5px;
-		
+
 
 			li{
 				width: 100%;
 				display: block;
 			}
 			li:hover{
-				background-color: #81cacd;
+				background-color: #91e2e2;
 				border-radius: 5px;
 			}
 		}

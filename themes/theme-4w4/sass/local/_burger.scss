@@ -1,5 +1,5 @@
 /*----------------- variable sass */
-$largeur_burger : 3rem;
+$largeur_burger : 33px;
 $duree : .3s;
 $epaisseur: 5%;
 
@@ -11,9 +11,7 @@ $epaisseur: 5%;
     position: relative;
     width: $largeur_burger;
     height: $largeur_burger;
-    border:2px solid rgb(38, 101, 150);
     border-radius: 50%;
-    overflow: hidden;
     &:hover{cursor: pointer;}
     div{
         position: absolute;

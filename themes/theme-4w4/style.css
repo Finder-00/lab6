@@ -665,13 +665,12 @@ textarea {
 .main-navigation {
   display: inline-block;
   width: 100vw;
-  margin-bottom: 1vh;
   /* fin ul principale*/
 }
 
 .main-navigation ul {
   /* nav - menu (ul principal) */
-  background-color: #0A2E4A;
+  background-color: #c8fdff;
   display: none;
   list-style: none;
   margin: 0;
@@ -692,24 +691,28 @@ textarea {
 
 .main-navigation ul ul a {
   /* sous-onglets du Sub-menu*/
-  color: #6590b1;
   width: 100%;
 }
 
 .main-navigation ul li {
   /*les onglets principale*/
+  font-size: 1.2rem;
   padding: 10px 5px;
+}
+
+.main-navigation ul li:hover {
+  background-color: #bceaeb;
 }
 
 .main-navigation ul li li {
   /* les sous onglet des onglets principale */
   padding: inherit;
   padding: 5px 2px;
-  background-color: #174b72;
+  background-color: #a5e4dc;
 }
 
 .main-navigation ul li li > a {
-  color: white;
+  color: #4d7577;
   padding: inherit;
   border-bottom: 1px solid white;
 }
@@ -754,14 +757,11 @@ textarea {
 bouton burger
 ----------------*/
 #burger {
-  margin: 5px;
+  margin: 10px;
   padding: 0;
   border: 0;
   transform: rotate(0);
-  transition: transform .5s;
-  background: white;
-  width: 10px;
-  height: 10px;
+  transition: all .5s ease-out;
 }
 
 #burger:focus {
@@ -797,7 +797,7 @@ Section desktop
 @media (min-width: 1000px) {
   .main-navigation.toggled ul,
   .main-navigation ul {
-    display: flex;
+    display: flex !important;
     position: static;
     justify-content: space-around;
     align-items: center;
@@ -827,7 +827,7 @@ Section desktop
   }
   .main-navigation.toggled ul ul li:hover,
   .main-navigation ul ul li:hover {
-    background-color: #81cacd;
+    background-color: #91e2e2;
     border-radius: 5px;
   }
   .main-navigation.toggled ul li,
@@ -1136,7 +1136,7 @@ body.home::after {
   z-index: -2;
   display: block;
   position: absolute;
-  top: 0px;
+  top: -.5px;
   left: -1.5px;
   width: 101%;
   height: 101%;
@@ -1148,11 +1148,6 @@ body.home::after {
   display: flex;
   flex-direction: column;
   text-align: center;
-  height: 10vh;
-}
-
-.site-branding p {
-  margin: 0px;
 }
 
 @media (min-width: 1000px) {
@@ -1192,9 +1187,10 @@ body.home::after {
   font-family: "Montserrat", sans-serif;
   font-size: clamp(0.5rem, -.8rem + 8.333vw, 1.3rem);
   font-weight: normal;
-  color: #b4d7da;
-  padding: 0;
+  color: #83adb1;
   margin-top: 0;
+  margin-bottom: 3%;
+  padding: 0;
 }
 
 .site-description:hover {
@@ -1270,7 +1266,7 @@ body.home::after {
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
-  background-color: #091426;
+  background-color: #152d52;
 }
 
 .article-menu h1 {
@@ -1310,6 +1306,11 @@ body.home::after {
   background-color: #1c2946;
   border-radius: 10px;
   z-index: 1;
+  transition: all .2s ease-out;
+}
+
+.article-menu section.bloc article:hover {
+  transform: scale(102%);
 }
 
 .article-menu section.bloc article p {
@@ -1318,7 +1319,7 @@ body.home::after {
 }
 
 .article-menu section.bloc article a {
-  font-size: clamp(0.75rem, -.5rem + 4vw, 1rem);
+  font-size: clamp(0.85rem, -.5rem + 5vw, 1.2rem);
   font-weight: bold;
   color: white;
   text-decoration: none;
@@ -1345,6 +1346,14 @@ body.home::after {
   background-color: #31107e;
 }
 
+.article-menu section.bloc .Spécifique:hover {
+  box-shadow: 0px 3px 13px rgba(70, 25, 174, 0.837);
+}
+
+.article-menu section.bloc .Jeu:hover {
+  box-shadow: 0px 3px 13px rgba(39, 130, 179, 0.461);
+}
+
 .article-menu section.bloc .Image {
   background-color: #e15242;
 }
@@ -1353,21 +1362,32 @@ body.home::after {
   color: #002564;
 }
 
+.article-menu section.bloc .Image a {
+  color: #ffd284;
+}
+
+.article-menu section.bloc .Image:hover {
+  box-shadow: 0px 3px 13px rgba(225, 82, 66, 0.659);
+}
+
 .article-menu section.bloc .Conception {
   background-color: #fcb6b6;
 }
 
 .article-menu section.bloc .Conception p {
-  color: darkmagenta;
+  color: #3a008b;
 }
 
 .article-menu section.bloc .Conception a {
-  color: #23008b;
+  color: #3b70a9;
+}
+
+.article-menu section.bloc .Conception:hover {
+  box-shadow: 0px 3px 13px rgba(225, 161, 66, 0.692);
 }
 
 @media (min-width: 1000px) {
   .article-menu h1 {
-    color: #cadee9;
     margin: inherit;
     margin-top: 5%;
     margin-bottom: 2%;
@@ -1389,7 +1409,7 @@ body.home::after {
   .article-menu section.bloc article a {
     font-size: clamp(0.9rem, -.5rem + 6.333vw, 1.5rem);
     font-weight: bold;
-    color: #c9f4f4;
+    color: #cefcff;
     text-decoration: none;
   }
   .article-menu section.bloc article a:hover {
@@ -1474,8 +1494,8 @@ body.home::after {
 .carrousel2 {
   display: flex;
   width: 300vw;
-  height: 50vh;
-  transition: transform 0.5s;
+  height: 55vh;
+  transition: transform ease-out 0.5s;
   flex-wrap: nowrap;
   /*fin .slide_conteneur*/
 }
@@ -1520,19 +1540,15 @@ body.home::after {
 
 .carrousel2 .slide_conteneur .slide:nth-of-type(1) {
   width: 100vw;
-  background: linear-gradient(228deg, #cd9bff 0%, #5bff9a 56%, #00daaa 100%);
+  background-image: linear-gradient(to bottom right, #ff6b6b, #fd6a71, #fb6878, #fa677e, #f86584, #f6648b, #f46291, #f26198, #f05f9e, #ef5ea4, #ed5cab, #eb5bb1);
 }
 
 .carrousel2 .slide_conteneur .slide:nth-of-type(2) {
   width: 100vw;
-  background: #fc466b;
-  background: radial-gradient(circle, #fc466b 8%, #3f5efb 100%);
 }
 
 .carrousel2 .slide_conteneur .slide:nth-of-type(3) {
   width: 100vw;
-  background: #6130fd;
-  background: linear-gradient(90deg, #6130fd 0%, #5dc0bc 61%, #45fcbb 100%);
 }
 
 .carrousel2 .slide_conteneur .slide a {
@@ -1570,22 +1586,20 @@ body.home::after {
   height: 16px;
   border-radius: 50px;
   margin: 4px;
-  background-color: #00daaa !important;
+  background-color: #ce6ba8 !important;
 }
 
 .ctrl-carrousel div:hover {
-  background-color: #387668 !important;
+  background-color: #d73d9c !important;
 }
 
 /*----------------- variable sass */
 #burger {
   display: block;
   position: relative;
-  width: 3rem;
-  height: 3rem;
-  border: 2px solid #266596;
+  width: 33px;
+  height: 33px;
   border-radius: 50%;
-  overflow: hidden;
 }
 
 @media (min-width: 1000px) {

@@ -36,7 +36,7 @@ content: "";
 z-index: -2;
 display: block;
 position: absolute;
-top: 0px;
+top: -.5px;
 left: -1.5px;
 width: 101%;
 height: 101%;
@@ -48,10 +48,6 @@ clip-path: circle(26.4% at 13% 18%);
     display: flex;
     flex-direction: column;
     text-align: center;
-    height: 10vh;
-    p{
-      margin: 0px;  
-    }
     @include media-desktop{
         margin-left: 37vw;
         height: 55vh;
@@ -59,7 +55,7 @@ clip-path: circle(26.4% at 13% 18%);
     }
 }
 
-.site-title {
+.site-title { // h1 titre header
     font-size: clamp(.7rem, #{"-.8rem + 8.333vw"}, 1.8rem);
     font-family: $font_title;
     margin: .2rem 0;
@@ -79,13 +75,14 @@ clip-path: circle(26.4% at 13% 18%);
     color: rgb(141, 197, 201);
 }
 
-.site-description { 
+.site-description { // sous-titre
     font-family: $font_title;
     font-size: clamp(.5rem, #{"-.8rem + 8.333vw"}, 1.3rem);
     font-weight: normal;
-    color: rgb(180, 215, 218);
-    padding: 0;
+    color: rgb(131, 173, 177);
     margin-top: 0;
+    margin-bottom: 3%;
+    padding: 0;
     &:hover{
         cursor:default;
     }
@@ -146,14 +143,14 @@ clip-path: circle(26.4% at 13% 18%);
             width: 150px;
         }
     }// fin media-desktop
-
 } // fin .entry-content
+
 
 .article-menu{ //grosse section contenant tout les articles
     width: 100vw;
     display: flex;
     flex-wrap: wrap;
-    background-color: rgb(9, 20, 38);
+    background-color: rgb(21, 45, 82);
 
     h1{ // grand titre section
         width: 100vw;
@@ -192,13 +189,17 @@ clip-path: circle(26.4% at 13% 18%);
             background-color: rgb(28, 41, 70);
             border-radius: 10px;
             z-index: 1;
+            transition: all .2s ease-out;
+            &:hover{
+                transform: scale(102%);
+            }
             
             p{ // infos haut & bas cellule
                 font-size:clamp(.6rem, 3vw , .9rem) ;
                 color: lightcoral;
             }
             a{ // lien cours
-                font-size: clamp(.75rem, #{"-.5rem + 4vw"}, 1rem);
+                font-size: clamp(.85rem, #{"-.5rem + 5vw"}, 1.2rem);
                 font-weight: bold;
                 // color: rgb(201, 244, 244);
                 color: white;
@@ -219,37 +220,48 @@ clip-path: circle(26.4% at 13% 18%);
            }
         .Web{ //classe des articles par categorie
             background-color: rgb(31, 31, 31);
+            
         }
         .Spécifique{
             background-color: rgb(49, 16, 126);
-            // background-color: rgb(164, 38, 218);
+            &:hover{
+                box-shadow: 0px 3px 13px rgba(70, 25, 174, 0.837);
+            }
         }
         .Jeu{
-
+            &:hover{
+                box-shadow: 0px 3px 13px rgba(39, 130, 179, 0.461);
+            }
         }
         .Image{
             p{
                 color: rgb(0, 37, 100);
             }
+            a{
+                color: rgb(255, 210, 132);
+            }
             background-color: rgb(225, 82, 66);
-            // background-color: rgb(255, 169, 112);
+            &:hover{
+                box-shadow: 0px 3px 13px rgba(225, 82, 66, 0.659);
+            }
         }
         .Conception{
             p{
-                color: darkmagenta;
+                color: rgb(58, 0, 139);
             }
             a{
-                color: rgb(35, 0, 139);
+                color: rgb(59, 112, 169);
             }
             background-color: rgb(252, 182, 182);
-            // background-color: rgb(255, 134, 78);
+            &:hover{
+                box-shadow: 0px 3px 13px rgba(225, 161, 66, 0.692);
+            }
         }
     }//fin section
 
     // Desktop
     @include media-desktop{
         h1{
-            color: rgb(202, 222, 233);
             margin:inherit;
             margin-top: 5%;
             margin-bottom: 2%;
@@ -272,7 +284,7 @@ clip-path: circle(26.4% at 13% 18%);
             a{ // lien cours
                 font-size: clamp(.9rem, #{"-.5rem + 6.333vw"}, 1.5rem);
                 font-weight: bold;
-                color: rgb(201, 244, 244);
+                color: rgb(206, 252, 255);
                 text-decoration: none;
                 &:hover{
                     color: rgb(38, 79, 175);
