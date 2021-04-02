@@ -23,9 +23,9 @@ body.home::after{
     z-index: -1;
     background-color: #c8fdff;
     @include media-desktop{
-        background-image: url(http://localhost:8888/4w4-tim/wp-content/uploads/2021/04/tim.jpg);
+        background-image: url(https://e1938022.webdev.cmaisonneuve.qc.ca/4w4/wp-content/uploads/2021/04/tim-2.jpg);
         background-repeat: no-repeat;
-        background-position: 0px -2% ;
+        background-position: 0 -2% ;
         background-size: 44%;
         clip-path: circle(26.4% at 13% 18%);
     }
@@ -36,10 +36,10 @@ content: "";
 z-index: -2;
 display: block;
 position: absolute;
-top: -.5px;
+top: -2px;
 left: -1.5px;
-width: 101%;
-height: 101%;
+width: 101.34%;
+height: 101.34%;
 background-color: #c8fdff;
 clip-path: circle(26.4% at 13% 18%);
 }
@@ -254,7 +254,7 @@ clip-path: circle(26.4% at 13% 18%);
             }
             background-color: rgb(252, 182, 182);
             &:hover{
-                box-shadow: 0px 3px 13px rgba(225, 161, 66, 0.692);
+                box-shadow: 0px 3px 13px rgba(255, 200, 212, 0.692);
             }
         }
     }//fin section

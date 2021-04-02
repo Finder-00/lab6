@@ -27,13 +27,19 @@
 			font-size: 1.2rem;
 			padding: 10px 5px;
 			&:hover{
-				background-color: #bceaeb;
+				background-color: rgba(134, 216, 225, 0.392);
 			}
-
-			li{ /* les sous onglet des onglets principale */
+			&:hover > ul{ // deplie les sous onglets 
+				opacity: 1;
+			}
+			ul{ // conteneur des sous onglets ci-bas
+				transition: opacity .4s ease-out;
+				opacity: 0;
+			}
+			li{ /* les sous onglets des onglets principale */
 				padding: inherit;
 				padding: 5px 2px;
-				background-color: #a5e4dc;
+				background-color: #c1ebee;
 			}
 			li>a{
 				color: $color__linkmenu;
