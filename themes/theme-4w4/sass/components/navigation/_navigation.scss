@@ -1,3 +1,4 @@
+// NAVIGATION
 .main-navigation {
 	display: inline-block;
 	width: 100vw;
@@ -10,7 +11,7 @@
 		padding-left: 0;
 		padding: 30px 0;
 		width: 100%;
-
+	
 		ul { /*Sub-menu*/
 			position: absolute;
 			padding: 2px;
@@ -23,6 +24,22 @@
 			}
 		} /*fin sub-menu*/
 
+// icone menu
+#menu-item-408{
+	width:100px;
+	transform-origin: center;
+	padding:0px;
+	&:hover{background: none;}
+	a{
+		justify-content: center;
+		margin: 0 auto;
+		width: 50px;
+		img{
+			border-radius: 100px;
+		}
+	}
+}
+
 		li{ /*les onglets principale*/
 			font-size: 1.2rem;
 			padding: 10px 5px;
@@ -32,6 +49,7 @@
 			&:hover > ul{ // deplie les sous onglets 
 				opacity: 1;
 			}
+
 			ul{ // conteneur des sous onglets ci-bas
 				transition: opacity .4s ease-out;
 				opacity: 0;
@@ -75,7 +93,6 @@
 
 	li {
 		position: relative;
-		flex: 1;
 		&:hover > a,
 		&.focus > a {
 		}
