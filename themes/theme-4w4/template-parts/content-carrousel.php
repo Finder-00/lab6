@@ -10,7 +10,6 @@
 	global $tPropriete;
 ?>
 
-<!-- ne recois pas les valeur de tPropriete -->
 <article class="slide_conteneur">
 		<div class="slide">
 		<?php the_post_thumbnail( 'thumbnail') ?>

@@ -172,7 +172,12 @@ Section desktop
 		a[href="#"]::after{
 			display: none;
 		}
-		
+		li{
+			&:hover> ul{
+				animation: anim-sousMenu .5s both;
+			}
+		}
+
 		ul{
 		position: absolute;
 		width: 250px;
@@ -182,7 +187,6 @@ Section desktop
 		justify-content: flex-start;
 		align-items: flex-start;
 		border-radius: 0 0 5px 5px;
-
 
 			li{
 				width: 100%;
@@ -204,6 +208,16 @@ Section desktop
 				padding: 7px 2px;
 			}
 		}
+	}
+}
+
+@keyframes anim-sousMenu {
+	from{
+		top: 10px;
+	}
+
+	to{
+		top: 100%;
 	}
 }
 /*---------------------

@@ -711,7 +711,7 @@ body {
   list-style: none;
   margin: 0;
   padding-left: 0;
-  background-color: #000;
+  background-color: #ff8080;
   text-align: left;
   left: 0;
   /* sub-menu */
@@ -807,7 +807,6 @@ menu tablet
   .main-navigation.toggled ul,
   .main-navigation ul {
     display: flex;
-    position: static;
     justify-content: space-around;
   }
   .main-navigation.toggled ul a[href="#"]::after,
@@ -816,10 +815,10 @@ menu tablet
   }
   .main-navigation.toggled ul li:hover ul,
   .main-navigation ul li:hover ul {
-    display: block;
-    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     width: 300px;
-    height: 500px;
   }
   .main-navigation.toggled ul ul,
   .main-navigation ul ul {
@@ -1151,6 +1150,10 @@ body.home::after {
   flex-direction: column;
 }
 
+.list-cours h2 {
+  text-align: center;
+}
+
 .list-cours section.bloc {
   display: flex;
   flex-direction: row;
@@ -1161,6 +1164,7 @@ body.home::after {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  text-align: center;
   align-items: center;
   width: 94%;
   margin: 1%;

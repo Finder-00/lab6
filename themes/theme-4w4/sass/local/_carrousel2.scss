@@ -6,8 +6,9 @@
     flex-wrap: nowrap;
 
     .slide_conteneur{
-        width: 100vw;
+        width: 50vw;
         height: 100%;
+        padding: 0 2vw;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -70,7 +71,7 @@
     justify-content: center;
     align-items: center;
 
-input[type="radio"]{    
+input{
     border-radius: 100px;
     width: 16px;
     height: 16px;
@@ -86,10 +87,19 @@ div{
     width: 16px;
     height: 16px;
     border-radius: 50px;
-    margin: 4px;
+    margin: 12px 7px 7px 7px;
     background-color: #ce6ba8 !important;
     &:hover{
         background-color:  #d73d9c !important;
+    }
+    &:nth-of-type(4){
+        display: none;
+    }
+    &:nth-of-type(5){
+        display: none;
+    }
+    &:nth-of-type(6){
+        display: none;
     }
 }
 }

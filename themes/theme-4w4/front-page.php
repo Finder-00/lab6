@@ -10,31 +10,6 @@
 get_header();
 ?>
 
-<!-------
-debut carrousel 2
-------->
-<!-- <section class="carrousel2"> //slider
-<article class="slide_conteneur">
-		<div class="slide">
-			<img src="" alt="">
-			<div class="slide_info">
-				<p> 454-4w4 - 90h - Web</p>
-				<a href=""></a>
-				<p>Session 4</p>
-			</div>
-		</div>
-	</article>
-</section>
-
-<div class="ctrl-carrousel">
-	<input type="radio" name="rad-carrousel">
-	<input type="radio" name="rad-carrousel">
-	<input type="radio" name="rad-carrousel">
-</div> -->
-<!-------
-fin carrousel 2
-------->
-
 
 <!-- /////////////// contenu FRONT-PAGE ///////////// -->
 	<main id="primary" class="site-main">
@@ -65,25 +40,23 @@ fin carrousel 2
 						<?php if($precedent != "XXXXX"): ?>
 							</section> <!--ici on ferme la section ouverte precedement -->
 							<?php if($precedent != "Web"): ?> <!--pour ne pas afficher en dessous du carrousel-->
-							<span></span> <!-- ligne separant les sections-->
 							<?php endif;?>
 
-							<?php if ($precedent == "Web"):?>
+							<?php if (in_array($precedent, ['Web','Jeu'])):?>
 							<section class="ctrl-carrousel">
-								<?php echo $ctrl_radio?>
+								<?php echo $ctrl_radio;?>
+								<?php $ctrl_radio = '';?> 
 							</section>
 							<?php endif;?>
-						
 						<?php endif; ?>
-
 						<h1><?php echo $tPropriete['titre'] ?></h1>
 
-						<section <?php echo ($tPropriete['typeCours'] == 'Web' ? 'class="carrousel2"' : 'class="bloc"'); ?>>
+						<section <?php echo (in_array($tPropriete['typeCours'], ['Web','Jeu']) ? 'class="carrousel2"' : 'class="bloc"'); ?>>
 
 					<?php endif; ?>					
-						<?php if($tPropriete['typeCours'] == 'Web'):
+						<?php if( in_array($tPropriete['typeCours'], ['Web','Jeu'])):
 						get_template_part( 'template-parts/content', 'carrousel' );
-						$ctrl_radio .= '<div><input type="radio" class="bouton-radio" name="rad-carrousel"></div>';
+						$ctrl_radio .= '<div> <input type="radio" class="bouton-radio" name="rad-'.$tPropriete['typeCours'].'"> </div>';
 						else :
 						get_template_part( 'template-parts/content', 'bloc' );
 						endif;

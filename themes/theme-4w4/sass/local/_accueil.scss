@@ -145,7 +145,13 @@ clip-path: circle(26.4% at 13% 18%);
     }// fin media-desktop
 } // fin .entry-content
 
-
+/*span{ // ligne de separation des section
+    display: block;
+    margin: 10% 0 0 0;
+    width: 90vw;
+    margin: 0 auto;
+    border-bottom: 3px solid lightcoral;
+}*/
 .article-menu{ //grosse section contenant tout les articles
     width: 100vw;
     display: flex;
@@ -159,14 +165,7 @@ clip-path: circle(26.4% at 13% 18%);
         text-align: center;
         margin: 5% 20% 1% 20%;
     }
-    span{ // ligne de separation des section
-        
-        display: block;
-        // margin: 0 10% 0 10%;
-        width: 90vw;
-        margin: 0 auto;
-        border-bottom: 3px solid lightcoral;
-    }
+
 
     section.bloc{
         display: flex;
