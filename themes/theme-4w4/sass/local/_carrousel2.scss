@@ -21,6 +21,14 @@
             justify-content: space-around;
             font-size: clamp(1rem, #{"-.3rem + 8.333vw"}, 2.5rem);;
             text-align: center;
+            border-radius: 10px;
+            background-image: linear-gradient(to bottom right, rgb(255, 107, 107), rgb(253, 106, 113), rgb(251, 104, 120), rgb(250, 103, 126), rgb(248, 101, 132), rgb(246, 100, 139), rgb(244, 98, 145), rgb(242, 97, 152), rgb(240, 95, 158), rgb(239, 94, 164), rgb(237, 92, 171), rgb(235, 91, 177));  
+            box-shadow: 0 5px 10px #d73d9c53;
+            transition: all .5s ease-out;
+            &:hover{
+                transform: scale(101%);
+                box-shadow: 0 5px 20px #d73d9cbf;
+            }
 
             img{
                 display: block;
@@ -42,7 +50,6 @@
             // image 1 slider
             &:nth-of-type(1){
                 width: 100vw;
-                background-image: linear-gradient(to bottom right, rgb(255, 107, 107), rgb(253, 106, 113), rgb(251, 104, 120), rgb(250, 103, 126), rgb(248, 101, 132), rgb(246, 100, 139), rgb(244, 98, 145), rgb(242, 97, 152), rgb(240, 95, 158), rgb(239, 94, 164), rgb(237, 92, 171), rgb(235, 91, 177));  
                 }
             // image 2 slider
             &:nth-of-type(2){
@@ -102,4 +109,8 @@ div{
         display: none;
     }
 }
+}
+
+.check{
+    background-color: #f58d48 !important;
 }

@@ -23,10 +23,10 @@ body.home::after{
     z-index: -1;
     background-color: #c8fdff;
     @include media-desktop{
-        background-image: url(http://localhost:8888/4w4-tim/wp-content/uploads/2021/04/tim.jpg);
+        background-image: url(http://localhost:8888/4w4-tim/wp-content/uploads/2021/04/etudiant-mac.jpg);
         background-repeat: no-repeat;
-        background-position: 0 -2% ;
-        background-size: 44%;
+        background-position: 0 10vh ;
+        background-size: 45%;
         clip-path: circle(26.4% at 13% 18%);
     }
 }
@@ -50,7 +50,7 @@ clip-path: circle(26.4% at 13% 18%);
     text-align: center;
     @include media-desktop{
         margin-left: 37vw;
-        height: 55vh;
+        height: 65vh;
         text-align: left;
     }
 }
@@ -79,7 +79,7 @@ clip-path: circle(26.4% at 13% 18%);
     font-family: $font_title;
     font-size: clamp(.5rem, #{"-.8rem + 8.333vw"}, 1.3rem);
     font-weight: normal;
-    color: rgb(131, 173, 177);
+    color: rgb(148, 211, 218);
     margin-top: 0;
     margin-bottom: 3%;
     padding: 0;
@@ -156,7 +156,7 @@ clip-path: circle(26.4% at 13% 18%);
     width: 100vw;
     display: flex;
     flex-wrap: wrap;
-    background-color: rgb(21, 45, 82);
+    background-color: rgb(21, 51, 82);
 
     h1{ // grand titre section
         width: 100vw;
@@ -262,8 +262,7 @@ clip-path: circle(26.4% at 13% 18%);
     @include media-desktop{
         h1{
             margin:inherit;
-            margin-top: 5%;
-            margin-bottom: 2%;
+            margin: 35px 0 12px 0;
         }
         section.bloc{
             margin-bottom: 10vh;
