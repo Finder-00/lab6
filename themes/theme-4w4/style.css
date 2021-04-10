@@ -694,26 +694,6 @@ textarea {
   width: 100%;
 }
 
-.main-navigation ul #menu-item-408 {
-  width: 100px;
-  transform-origin: center;
-  padding: 0px;
-}
-
-.main-navigation ul #menu-item-408:hover {
-  background: none;
-}
-
-.main-navigation ul #menu-item-408 a {
-  justify-content: center;
-  margin: 0 auto;
-  width: 50px;
-}
-
-.main-navigation ul #menu-item-408 a img {
-  border-radius: 100px;
-}
-
 .main-navigation ul li {
   /*les onglets principale*/
   font-size: 1.2rem;
@@ -726,6 +706,26 @@ textarea {
 
 .main-navigation ul li:hover > ul {
   opacity: 1;
+}
+
+.main-navigation ul li:first-child {
+  width: 100px;
+  transform-origin: center;
+  padding: 0px;
+}
+
+.main-navigation ul li:first-child:hover {
+  background: none;
+}
+
+.main-navigation ul li:first-child a {
+  justify-content: center;
+  margin: 0 auto;
+  width: 50px;
+}
+
+.main-navigation ul li:first-child a img {
+  border-radius: 100px;
 }
 
 .main-navigation ul li ul {
@@ -1164,7 +1164,7 @@ body.home::after {
 
 @media (min-width: 1000px) {
   body.home::after {
-    background-image: url(http://localhost:8888/4w4-tim/wp-content/uploads/2021/04/etudiant-mac.jpg);
+    background-image: url(https://e1938022.webdev.cmaisonneuve.qc.ca/4w4/wp-content/uploads/2021/04/etudiant-mac-1.jpg);
     background-repeat: no-repeat;
     background-position: 0 10vh;
     background-size: 45%;

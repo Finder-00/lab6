@@ -19,26 +19,12 @@
 			left: -999em;
 			z-index: 99999;
 			a{/* sous-onglets du Sub-menu*/
-				
 				width: 100%;
 			}
+			// icone menu
 		} /*fin sub-menu*/
 
-// icone menu
-#menu-item-408{
-	width:100px;
-	transform-origin: center;
-	padding:0px;
-	&:hover{background: none;}
-	a{
-		justify-content: center;
-		margin: 0 auto;
-		width: 50px;
-		img{
-			border-radius: 100px;
-		}
-	}
-}
+
 
 		li{ /*les onglets principale*/
 			font-size: 1.2rem;
@@ -48,6 +34,20 @@
 			}
 			&:hover > ul{ // deplie les sous onglets 
 				opacity: 1;
+			}
+			&:first-child{
+				width:100px;
+				transform-origin: center;
+				padding:0px;
+				&:hover{background: none;}
+				a{
+					justify-content: center;
+					margin: 0 auto;
+					width: 50px;
+					img{
+						border-radius: 100px;
+					}
+				}
 			}
 
 			ul{ // conteneur des sous onglets ci-bas
