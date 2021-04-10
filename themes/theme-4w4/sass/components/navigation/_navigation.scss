@@ -23,31 +23,27 @@
 			}
 			// icone menu
 		} /*fin sub-menu*/
+		.menu-image-title-hide{
+				justify-content: center;
+				margin: 0 auto;
+				width: 50px;
+				&~
+				img{
+					border-radius: 100px;
+				}
+		}
 
 
 
 		li{ /*les onglets principale*/
 			font-size: 1.2rem;
 			padding: 10px 5px;
+
 			&:hover{
 				background-color: rgba(134, 216, 225, 0.392);
 			}
 			&:hover > ul{ // deplie les sous onglets 
 				opacity: 1;
-			}
-			&:first-child{
-				width:100px;
-				transform-origin: center;
-				padding:0px;
-				&:hover{background: none;}
-				a{
-					justify-content: center;
-					margin: 0 auto;
-					width: 50px;
-					img{
-						border-radius: 100px;
-					}
-				}
 			}
 
 			ul{ // conteneur des sous onglets ci-bas

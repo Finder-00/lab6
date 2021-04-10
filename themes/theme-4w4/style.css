@@ -694,6 +694,16 @@ textarea {
   width: 100%;
 }
 
+.main-navigation ul .menu-image-title-hide {
+  justify-content: center;
+  margin: 0 auto;
+  width: 50px;
+}
+
+.main-navigation ul .menu-image-title-hide ~ img {
+  border-radius: 100px;
+}
+
 .main-navigation ul li {
   /*les onglets principale*/
   font-size: 1.2rem;
@@ -706,26 +716,6 @@ textarea {
 
 .main-navigation ul li:hover > ul {
   opacity: 1;
-}
-
-.main-navigation ul li:first-child {
-  width: 100px;
-  transform-origin: center;
-  padding: 0px;
-}
-
-.main-navigation ul li:first-child:hover {
-  background: none;
-}
-
-.main-navigation ul li:first-child a {
-  justify-content: center;
-  margin: 0 auto;
-  width: 50px;
-}
-
-.main-navigation ul li:first-child a img {
-  border-radius: 100px;
 }
 
 .main-navigation ul li ul {
